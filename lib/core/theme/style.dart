@@ -52,6 +52,12 @@ class CustomFontStyles {
     color: WhiteColors.white,
     fontWeight: CustomFontWeight.tajawalMedium,
     fontSize: 16.w,
+
+  );static TextStyle title3MainSemiBold16 = TextStyle(
+    fontFamily: primaryFontFamily,
+    color: AppColor.primary,
+    fontWeight: CustomFontWeight.tajawalMedium,
+    fontSize: 16.w,
   );
 
   static TextStyle subheading1Medium18 = TextStyle(

@@ -40,7 +40,7 @@ class IntroductoryScreen extends StatelessWidget {
 
               decoration: InputDecoration(
 
-                //contentPadding:  EdgeInsets.symmetric(vertical: 16.h,horizontal: 16.w),
+               contentPadding:  EdgeInsets.symmetric(vertical: 16.h,horizontal: 16.w),
 
                 label: Text("المحافظة ",    style:  CustomFontStyles.title1Bold24),
 
@@ -80,7 +80,7 @@ class IntroductoryScreen extends StatelessWidget {
               onSaved: (value) {
                 selectedValue = value;
               },
-           //   buttonStyleData:  ButtonStyleData(padding: EdgeInsets.only(right: 22.w),),
+          buttonStyleData:  ButtonStyleData(padding: EdgeInsets.only(left: 8.w),),
               iconStyleData: const IconStyleData(
 
                 icon: Icon(
@@ -92,12 +92,10 @@ class IntroductoryScreen extends StatelessWidget {
               dropdownStyleData: DropdownStyleData(
                 maxHeight: 300,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              menuItemStyleData: const MenuItemStyleData(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-              ),
+
             ),
           ),
         ),
@@ -242,7 +240,8 @@ class IntroductoryScreen extends StatelessWidget {
           ),
         ),
 
-        MainButton(title: "تسجيل الدخول",)
+        MainButton(title: "تسجيل الدخول",),
+        MainButtonOutLine(title: "إنشاء حساب",)
       ],),
     );
   }
