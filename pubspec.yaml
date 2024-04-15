@@ -69,6 +69,10 @@ dependencies:
   http_mock_adapter: ^0.6.1
   animations: ^2.0.11
   flutter_animate: ^4.5.0
+  url_launcher: ^6.2.6
+  dartz: ^0.10.1
+  get_storage: ^2.1.1
+  dropdown_button2: ^2.3.9
   # An SVG rendering and widget library for Flutter, which allows painting
   # for adapting screen and font size.
 
@@ -148,7 +152,6 @@ flutter:
         - asset: assets/fonts/Tajawal/Tajawal-Medium.ttf
           weight: 600
         - asset: assets/fonts/Tajawal/Tajawal-ExtraLight.ttf
-
           weight: 100
 flutter_native_splash:
 
