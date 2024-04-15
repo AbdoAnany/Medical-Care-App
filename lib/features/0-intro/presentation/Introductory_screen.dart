@@ -239,7 +239,7 @@ class IntroductoryScreen extends StatelessWidget {
             ),
           ),
         ),
-
+        SizedBox(height: 40.h),
         MainButton(title: "تسجيل الدخول",),
         MainButtonOutLine(title: "إنشاء حساب",)
       ],),

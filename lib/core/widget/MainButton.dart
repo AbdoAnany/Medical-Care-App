@@ -49,8 +49,8 @@ class MainButtonOutLine extends StatelessWidget {
       padding:EdgeInsets.symmetric(horizontal: 24.w,vertical: 10.h),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppColor.primary),
-          color: AppColor.primary.withOpacity(.3)
+          border: Border.all(color: AppColor.primary.withOpacity(.3)),
+          color: AppColor.primary.withOpacity(.07)
       ),
       //  width: MediaQuery.of(context).size.width * .9,
       //   height: TSizes.buttonHeight,
