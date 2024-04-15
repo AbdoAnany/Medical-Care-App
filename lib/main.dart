@@ -17,20 +17,25 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
         useMaterial3: true,
       ),
-      home: IntoScreen(),
+      home:  IntoScreen(),
     );
   }
 }
-
 class IntoScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         Container(
-          width: double.infinity,
-          height: double.infinity,
+          width: 390,
+          height: 844,
           clipBehavior: Clip.antiAlias,
+          decoration: ShapeDecoration(
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(30),
+            ),
+          ),
           child: Stack(
             children: [
               Positioned(
@@ -92,11 +97,8 @@ class IntoScreen extends StatelessWidget {
                                           height: 11.33,
                                           decoration: ShapeDecoration(
                                             shape: RoundedRectangleBorder(
-                                              side: BorderSide(
-                                                  width: 1,
-                                                  color: Color(0xFF121212)),
-                                              borderRadius:
-                                                  BorderRadius.circular(2.67),
+                                              side: BorderSide(width: 1, color: Color(0xFF121212)),
+                                              borderRadius: BorderRadius.circular(2.67),
                                             ),
                                           ),
                                         ),
@@ -111,8 +113,7 @@ class IntoScreen extends StatelessWidget {
                                         decoration: ShapeDecoration(
                                           color: Color(0xFF121212),
                                           shape: RoundedRectangleBorder(
-                                            borderRadius:
-                                                BorderRadius.circular(1.33),
+                                            borderRadius: BorderRadius.circular(1.33),
                                           ),
                                         ),
                                       ),
@@ -129,8 +130,7 @@ class IntoScreen extends StatelessWidget {
                                 height: 11,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: NetworkImage(
-                                        "https://via.placeholder.com/15x11"),
+                                    image: NetworkImage("https://via.placeholder.com/15x11"),
                                     fit: BoxFit.fill,
                                   ),
                                 ),
@@ -144,8 +144,7 @@ class IntoScreen extends StatelessWidget {
                                 height: 10.67,
                                 decoration: BoxDecoration(
                                   image: DecorationImage(
-                                    image: NetworkImage(
-                                        "https://via.placeholder.com/17x11"),
+                                    image: NetworkImage("https://via.placeholder.com/17x11"),
                                     fit: BoxFit.fill,
                                   ),
                                 ),
@@ -164,8 +163,7 @@ class IntoScreen extends StatelessWidget {
                 child: Container(
                   width: 358,
                   height: 56,
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
                   decoration: ShapeDecoration(
                     color: Color(0xFF0F7F7E),
                     shape: RoundedRectangleBorder(
@@ -249,7 +247,9 @@ class IntoScreen extends StatelessWidget {
                                 child: Container(
                                   width: 261.04,
                                   height: 180.95,
-                                  child: Stack(children: []),
+                                  child: Stack(children: [
+                                  
+                                  ]),
                                 ),
                               ),
                               Positioned(
@@ -266,7 +266,9 @@ class IntoScreen extends StatelessWidget {
                                         child: Container(
                                           width: 82.47,
                                           height: 157.40,
-                                          child: Stack(children: []),
+                                          child: Stack(children: [
+                                          
+                                          ]),
                                         ),
                                       ),
                                       Positioned(
@@ -275,7 +277,9 @@ class IntoScreen extends StatelessWidget {
                                         child: Container(
                                           width: 54.85,
                                           height: 44.22,
-                                          child: Stack(children: []),
+                                          child: Stack(children: [
+                                          
+                                          ]),
                                         ),
                                       ),
                                       Positioned(
@@ -292,7 +296,9 @@ class IntoScreen extends StatelessWidget {
                                                 child: Container(
                                                   width: 108.53,
                                                   height: 62.79,
-                                                  child: Stack(children: []),
+                                                  child: Stack(children: [
+                                                  
+                                                  ]),
                                                 ),
                                               ),
                                             ],
@@ -321,7 +327,9 @@ class IntoScreen extends StatelessWidget {
                                 child: Container(
                                   width: 33.48,
                                   height: 33.49,
-                                  child: Stack(children: []),
+                                  child: Stack(children: [
+                                
+                                  ]),
                                 ),
                               ),
                               Positioned(
@@ -330,7 +338,9 @@ class IntoScreen extends StatelessWidget {
                                 child: Container(
                                   width: 18.75,
                                   height: 18.76,
-                                  child: Stack(children: []),
+                                  child: Stack(children: [
+                                  
+                                  ]),
                                 ),
                               ),
                             ],
@@ -343,7 +353,9 @@ class IntoScreen extends StatelessWidget {
                         child: Container(
                           width: 29.37,
                           height: 30.32,
-                          child: Stack(children: []),
+                          child: Stack(children: [
+                          
+                          ]),
                         ),
                       ),
                       Positioned(
@@ -360,7 +372,9 @@ class IntoScreen extends StatelessWidget {
                                 child: Container(
                                   width: 78.34,
                                   height: 144.35,
-                                  child: Stack(children: []),
+                                  child: Stack(children: [
+                                  
+                                  ]),
                                 ),
                               ),
                               Positioned(
@@ -377,7 +391,9 @@ class IntoScreen extends StatelessWidget {
                                         child: Container(
                                           width: 14.37,
                                           height: 2.06,
-                                          child: Stack(children: []),
+                                          child: Stack(children: [
+                                          
+                                          ]),
                                         ),
                                       ),
                                       Positioned(
@@ -386,7 +402,9 @@ class IntoScreen extends StatelessWidget {
                                         child: Container(
                                           width: 31.57,
                                           height: 24.41,
-                                          child: Stack(children: []),
+                                          child: Stack(children: [
+                                          
+                                          ]),
                                         ),
                                       ),
                                       Positioned(
@@ -395,7 +413,9 @@ class IntoScreen extends StatelessWidget {
                                         child: Container(
                                           width: 35.91,
                                           height: 75.90,
-                                          child: Stack(children: []),
+                                          child: Stack(children: [
+                                          
+                                          ]),
                                         ),
                                       ),
                                       Positioned(
@@ -404,7 +424,9 @@ class IntoScreen extends StatelessWidget {
                                         child: Container(
                                           width: 24.44,
                                           height: 27.47,
-                                          child: Stack(children: []),
+                                          child: Stack(children: [
+                                          
+                                          ]),
                                         ),
                                       ),
                                       Positioned(
@@ -413,7 +435,9 @@ class IntoScreen extends StatelessWidget {
                                         child: Container(
                                           width: 22.11,
                                           height: 32.86,
-                                          child: Stack(children: []),
+                                          child: Stack(children: [
+                                          
+                                          ]),
                                         ),
                                       ),
                                     ],
@@ -438,7 +462,9 @@ class IntoScreen extends StatelessWidget {
                                 child: Container(
                                   width: 52.75,
                                   height: 25.55,
-                                  child: Stack(children: []),
+                                  child: Stack(children: [
+                                  
+                                  ]),
                                 ),
                               ),
                               Positioned(
@@ -455,7 +481,9 @@ class IntoScreen extends StatelessWidget {
                                         child: Container(
                                           width: 52.86,
                                           height: 24.26,
-                                          child: Stack(children: []),
+                                          child: Stack(children: [
+                                          
+                                          ]),
                                         ),
                                       ),
                                     ],
@@ -482,15 +510,15 @@ class IntoScreen extends StatelessWidget {
                         left: 24,
                         top: 0,
                         child: Transform(
-                          transform: Matrix4.identity()
-                            ..translate(0.0, 0.0)
-                            ..rotateZ(3.14),
+                          transform: Matrix4.identity()..translate(0.0, 0.0)..rotateZ(3.14),
                           child: Container(
                             width: 24,
                             height: 24,
                             clipBehavior: Clip.antiAlias,
                             decoration: BoxDecoration(),
-                            child: Stack(children: []),
+                            child: Stack(children: [
+                          
+                            ]),
                           ),
                         ),
                       ),
