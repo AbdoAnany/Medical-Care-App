@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medical_care_app/core/theme/style.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../core/theme/widget_themes/appbar_theme.dart';
 import '../../core/theme/widget_themes/bottom_sheet_theme.dart';
@@ -19,7 +20,8 @@ class TAppTheme {
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Outfit',
+    
+    fontFamily: MyFontStyles.primaryFontFamily,
     disabledColor: AppColor.grey,
     brightness: Brightness.light,
     primaryColor: AppColor.primary,
@@ -38,7 +40,7 @@ class TAppTheme {
 
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-    fontFamily: 'Outfit',
+    fontFamily: MyFontStyles.primaryFontFamily,
     disabledColor: AppColor.grey,
     brightness: Brightness.dark,
     primaryColor: AppColor.primary,

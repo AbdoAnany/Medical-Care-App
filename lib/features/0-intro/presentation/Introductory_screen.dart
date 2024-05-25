@@ -6,12 +6,19 @@ import 'package:iconsax/iconsax.dart';
 import 'package:medical_care_app/core/constants/colors.dart';
 
 import '../../../core/constants/image_strings.dart';
+import '../../../core/helpers/helper_functions.dart';
 import '../../../core/theme/style.dart';
 import '../../../core/widget/MainButton.dart';
+import '../../login/presentation/pages/LoginScreen.dart';
 
-class IntroductoryScreen extends StatelessWidget {
+class IntroductoryScreen extends StatefulWidget {
   const IntroductoryScreen({super.key});
 
+  @override
+  State<IntroductoryScreen> createState() => _IntroductoryScreenState();
+}
+
+class _IntroductoryScreenState extends State<IntroductoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,13 +29,13 @@ class IntroductoryScreen extends StatelessWidget {
         Padding(
           padding:  EdgeInsets.symmetric(horizontal: 16.w),
           child: Text('تخصيص التطبيق',
-              style: CustomFontStyles.title1Bold24),
+              style: MyFontStyles.blackBold24),
         ),
         SizedBox(height: 16.h),
         Padding(
           padding:  EdgeInsets.symmetric(horizontal: 53.w),
           child: Text('يمكنك تخصيص التطبيق من خلال اختيار المنطقة واللغة المستخدمة.',
-              style: CustomFontStyles.subheading1Medium18, textAlign: TextAlign.center),
+              style: MyFontStyles.greyMedium18, textAlign: TextAlign.center),
         ),
         SizedBox(height: 58.h),
         Padding(
@@ -36,13 +43,13 @@ class IntroductoryScreen extends StatelessWidget {
           child: Directionality(textDirection: TextDirection.rtl,
             child: DropdownButtonFormField2<Map<String,dynamic>>(
             alignment: AlignmentDirectional.centerEnd,
-              style:  CustomFontStyles.paragraphRegular15,
-
+              style:  MyFontStyles.greyRegular15,
+value: selectedGav,
               decoration: InputDecoration(
 
                contentPadding:  EdgeInsets.symmetric(vertical: 16.h,horizontal: 16.w),
 
-                label: Text("المحافظة ",    style:  CustomFontStyles.title1Bold24),
+                label: Text("المحافظة ",    style:  MyFontStyles.blackBold24),
 
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide( color: WhiteColors.grey),
@@ -56,7 +63,7 @@ class IntroductoryScreen extends StatelessWidget {
               ),
               hint:  Text(
                 "اختر المحافظة ",
-                style: CustomFontStyles.subheading1Medium18,
+                style: MyFontStyles.greyMedium18,
               ),
               items: GovList
                   .map((item) => DropdownMenuItem<Map<String,dynamic>>(
@@ -64,7 +71,7 @@ class IntroductoryScreen extends StatelessWidget {
                 value: item,
                 child: Text(
                   item['ArabicName'],
-                  style: CustomFontStyles.subheading1Medium18,
+                  style: MyFontStyles.greyMedium18,
                 ),
               ))
                   .toList(),
@@ -75,10 +82,23 @@ class IntroductoryScreen extends StatelessWidget {
                 return null;
               },
               onChanged: (value) {
-                //Do something when selected item is changed.
+
+                selectedGav = value;
+
+                print(selectedGav);
+                selectedCity=null;
+                setState(() {
+
+                });
               },
               onSaved: (value) {
-                selectedValue = value;
+                // selectedGav = value;
+                //
+                // print(selectedGav);
+                // selectedCity=null;
+                // setState(() {
+                //
+                // });
               },
           buttonStyleData:  ButtonStyleData(padding: EdgeInsets.only(left: 8.w),),
               iconStyleData: const IconStyleData(
@@ -99,56 +119,59 @@ class IntroductoryScreen extends StatelessWidget {
             ),
           ),
         ),
-        Padding(
-          padding:  EdgeInsets.symmetric( horizontal: 16.0.w,vertical: 12.h),
-          child: Directionality(textDirection: TextDirection.rtl,
-            child: DropdownButtonFormField2<Map<String,dynamic>>(
-              alignment: AlignmentDirectional.centerEnd,
-              style:  CustomFontStyles.paragraphRegular15,
 
+        selectedGav==null||true?SizedBox(height: 77.h,):
+
+        Container(height: 77.h,
+          padding:  EdgeInsets.symmetric( horizontal: 16.0.w,vertical: 12.h),
+          child: Directionality(
+            textDirection: TextDirection.rtl,
+
+            child: DropdownButtonFormField2<Map<String,dynamic>>(
+
+              alignment: AlignmentDirectional.centerEnd,
+              style:  MyFontStyles.greyRegular15,
               decoration: InputDecoration(
 
-                //contentPadding:  EdgeInsets.symmetric(vertical: 16.h,horizontal: 16.w),
+                contentPadding:  EdgeInsets.symmetric(vertical: 16.h,horizontal: 16.w),
 
-                label: Text("المحافظة ",    style:  CustomFontStyles.title1Bold24),
+                label: Text("المنطقة",    style:  MyFontStyles.blackBold24),
 
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide( color: WhiteColors.grey),
 
                   borderRadius: BorderRadius.circular(15), ),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-
-                ),
+                  borderRadius: BorderRadius.circular(15),),
                 // Add more decoration..
               ),
               hint:  Text(
                 "اختر المحافظة ",
-                style: CustomFontStyles.subheading1Medium18,
+                style: MyFontStyles.greyMedium18,
               ),
-              items: GovList
+              items:CityList.where((element) => selectedGav?['GovId']==element['GovID'])
                   .map((item) => DropdownMenuItem<Map<String,dynamic>>(
                 alignment: AlignmentDirectional.centerEnd,
                 value: item,
                 child: Text(
-                  item['ArabicName'],
-                  style: CustomFontStyles.subheading1Medium18,
+                  item['CityArabicName'],
+                  style: MyFontStyles.greyMedium18,
                 ),
               ))
                   .toList(),
               validator: (value) {
                 if (value == null) {
-                  return "اختر المحافظة ";
+                  return "اختر المنطقة";
                 }
                 return null;
               },
               onChanged: (value) {
-                //Do something when selected item is changed.
-              },
+                selectedCity = value;
+                },
               onSaved: (value) {
-                selectedValue = value;
+
               },
-              //   buttonStyleData:  ButtonStyleData(padding: EdgeInsets.only(right: 22.w),),
+              buttonStyleData:  ButtonStyleData(padding: EdgeInsets.only(left: 8.w),),
               iconStyleData: const IconStyleData(
 
                 icon: Icon(
@@ -160,195 +183,31 @@ class IntroductoryScreen extends StatelessWidget {
               dropdownStyleData: DropdownStyleData(
                 maxHeight: 300,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
+                  borderRadius: BorderRadius.circular(8),
                 ),
               ),
-              menuItemStyleData: const MenuItemStyleData(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-              ),
+
             ),
           ),
         ),
-        Padding(
-          padding:  EdgeInsets.symmetric( horizontal: 16.0.w,vertical: 12.h),
-          child: Directionality(textDirection: TextDirection.rtl,
-            child: DropdownButtonFormField2<Map<String,dynamic>>(
-              alignment: AlignmentDirectional.centerEnd,
-              style:  CustomFontStyles.paragraphRegular15,
 
-              decoration: InputDecoration(
-
-                //contentPadding:  EdgeInsets.symmetric(vertical: 16.h,horizontal: 16.w),
-
-                label: Text("المحافظة ",    style:  CustomFontStyles.title1Bold24),
-
-                enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide( color: WhiteColors.grey),
-
-                  borderRadius: BorderRadius.circular(15), ),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(15),
-
-                ),
-                // Add more decoration..
-              ),
-              hint:  Text(
-                "اختر المحافظة ",
-                style: CustomFontStyles.subheading1Medium18,
-              ),
-              items: GovList
-                  .map((item) => DropdownMenuItem<Map<String,dynamic>>(
-                alignment: AlignmentDirectional.centerEnd,
-                value: item,
-                child: Text(
-                  item['ArabicName'],
-                  style: CustomFontStyles.subheading1Medium18,
-                ),
-              ))
-                  .toList(),
-              validator: (value) {
-                if (value == null) {
-                  return "اختر المحافظة ";
-                }
-                return null;
-              },
-              onChanged: (value) {
-                //Do something when selected item is changed.
-              },
-              onSaved: (value) {
-                selectedValue = value;
-              },
-              //   buttonStyleData:  ButtonStyleData(padding: EdgeInsets.only(right: 22.w),),
-              iconStyleData: const IconStyleData(
-
-                icon: Icon(
-                  Iconsax.arrow_down_14,
-                  color: WhiteColors.textDarkGrey,
-                ),
-                iconSize: 24,
-              ),
-              dropdownStyleData: DropdownStyleData(
-                maxHeight: 300,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-              ),
-              menuItemStyleData: const MenuItemStyleData(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-              ),
-            ),
-          ),
-        ),
+        SizedBox(height: 77.h,),
         SizedBox(height: 40.h),
-        MainButton(title: "تسجيل الدخول",),
+        MainButton(title: "تسجيل الدخول",
+        onPressed: (){
+          THelperFunctions.navigateAndReplaceScreen(LoginScreen());
+
+        },
+        ),
         MainButtonOutLine(title: "إنشاء حساب",)
       ],),
     );
   }
 }
 
-// final List<String> genderItems = [
-//   'Male',
-//   'Female',
-// ];
 
- Map<String,dynamic>? selectedValue;
-//
-// final _formKey = GlobalKey<FormState>();
-//
-// @override
-// Widget build(BuildContext context) {
-//   return Scaffold(
-//     body: Form(
-//       key: _formKey,
-//       child: Padding(
-//         padding: const EdgeInsets.symmetric(horizontal: 80),
-//         child: Column(
-//           mainAxisAlignment: MainAxisAlignment.center,
-//           children: [
-//             TextFormField(
-//               decoration: InputDecoration(
-//                 contentPadding: const EdgeInsets.all(16),
-//                 hintText: 'Enter Your Full Name.',
-//                 hintStyle: const TextStyle(fontSize: 14),
-//                 border: OutlineInputBorder(
-//                   borderRadius: BorderRadius.circular(15),
-//                 ),
-//               ),
-//             ),
-//             const SizedBox(height: 30),
-//             DropdownButtonFormField2<String>(
-//               isExpanded: true,
-//               decoration: InputDecoration(
-//                 // Add Horizontal padding using menuItemStyleData.padding so it matches
-//                 // the menu padding when button's width is not specified.
-//                 contentPadding: const EdgeInsets.symmetric(vertical: 16),
-//                 border: OutlineInputBorder(
-//                   borderRadius: BorderRadius.circular(15),
-//                 ),
-//                 // Add more decoration..
-//               ),
-//               hint: const Text(
-//                 'Select Your Gender',
-//                 style: TextStyle(fontSize: 14),
-//               ),
-//               items: genderItems
-//                   .map((item) => DropdownMenuItem<String>(
-//                 value: item,
-//                 child: Text(
-//                   item,
-//                   style: const TextStyle(
-//                     fontSize: 14,
-//                   ),
-//                 ),
-//               ))
-//                   .toList(),
-//               validator: (value) {
-//                 if (value == null) {
-//                   return 'Please select gender.';
-//                 }
-//                 return null;
-//               },
-//               onChanged: (value) {
-//                 //Do something when selected item is changed.
-//               },
-//               onSaved: (value) {
-//                 selectedValue = value.toString();
-//               },
-//               buttonStyleData: const ButtonStyleData(
-//                 padding: EdgeInsets.only(right: 8),
-//               ),
-//               iconStyleData: const IconStyleData(
-//                 icon: Icon(
-//                   Icons.arrow_drop_down,
-//                   color: Colors.black45,
-//                 ),
-//                 iconSize: 24,
-//               ),
-//               dropdownStyleData: DropdownStyleData(
-//                 decoration: BoxDecoration(
-//                   borderRadius: BorderRadius.circular(15),
-//                 ),
-//               ),
-//               menuItemStyleData: const MenuItemStyleData(
-//                 padding: EdgeInsets.symmetric(horizontal: 16),
-//               ),
-//             ),
-//             const SizedBox(height: 30),
-//             TextButton(
-//               onPressed: () {
-//                 if (_formKey.currentState!.validate()) {
-//                   _formKey.currentState!.save();
-//                 }
-//               },
-//               child: const Text('Submit Button'),
-//             ),
-//           ],
-//         ),
-//       ),
-//     ),
-//   );
-// }
+ Map<String,dynamic>? selectedGav;
+ Map<String,dynamic>? selectedCity;
 
 List GovList= [
         {

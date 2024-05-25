@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
@@ -7,6 +8,7 @@ import 'core/constants/text_strings.dart';
 import 'core/theme/theme.dart';
 import 'core/theme/widget_themes/text_theme.dart';
 import 'features/0-intro/presentation/intro_screen.dart';
+import 'features/home/presentation/pages/home_screen.dart';
 
 
 
@@ -46,13 +48,17 @@ class App extends StatelessWidget {
                     TTextTheme.init(context,them);
                     return w!;
                   },
+                  supportedLocales: context.supportedLocales,
+                  localizationsDelegates: context.localizationDelegates,
                   navigatorKey: Get.navigatorKey,
                   title: TTexts.appName,
                   themeMode: them.themeMode,
                   theme: TAppTheme.lightTheme,
                   darkTheme: TAppTheme.darkTheme,
                   debugShowCheckedModeBanner: false,
-                  home: const IntroScreen()  ));
+                  home:  HomeScreen(),
+                //  const IntroScreen()
+              ));
         }));
   }
 }

@@ -54,7 +54,6 @@ class AppColor {
   static const Color secondary = Color(0xFFFFE24B);
   static const Color scaffoldBackgroundColor = Color(0xFFF5F5F5);
 
-  static const Color accent = Color(0xFFb0c7ff);
 //
   // Text colors
   static const Color textPrimary = Color(0xFF333333);
@@ -102,6 +101,7 @@ class AppColor {
 
 class WhiteColors {
   // White color variations
+  static const Color tranperant = Color(0xFFFFFF);
   static const Color white = Color(0xFFFFFFFF);
   static const Color whiteHover = Color(0xFFFCFDFD);
   static const Color whiteActive = Color(0xFFF5F7F9);
@@ -143,7 +143,7 @@ class BlueColors {
 
 class GreenColors {
   // Light color variations
-  static const Color light = Color(0xFFE6F6F4);
+  static const Color light = Color(0xff0f7f7e);
   static const Color lightHover = Color(0xFFD9F2EF);
   static const Color lightActive = Color(0xFFB0E4DD);
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter/material.dart';
 
+import '../../main.dart';
 import '../../app.dart';
 
 class THelperFunctions {
@@ -117,3 +119,56 @@ class THelperFunctions {
     return wrappedList;
   }
 }
+
+
+
+
+class NavigationHelper {
+  // Navigate to a new screen
+  static Future<T?> goTo<T>( Widget screen) {
+    return Navigator.push(
+      Get.context,
+      MaterialPageRoute(builder: (context) => screen),
+    );
+  }
+
+  // Navigate to a new screen and replace the current screen
+  static Future<T?> goToAndReplace<T>( Widget screen) {
+    return Navigator.pushReplacement(
+      Get.context,
+      MaterialPageRoute(builder: (context) => screen),
+    );
+  }
+
+  // Navigate to a new screen and remove all previous screens
+  static Future<T?> goToAndRemoveUntil<T>( Widget screen) {
+    return Navigator.pushAndRemoveUntil(
+      Get.context,
+      MaterialPageRoute(builder: (context) => screen),
+          (Route<dynamic> route) => false,
+    );
+  }
+
+  // Navigate back to the previous screen
+  static void goBack() {
+    Navigator.pop( Get.context);
+  }
+
+  // Navigate back to the previous screen with result
+  static void goBackWithResult<T>( T result) {
+    Navigator.pop( Get.context, result);
+  }
+
+  // Check if can go back
+  static bool canNavigateBack() {
+    return Navigator.canPop( Get.context);
+  }
+}
+
+// Example usage:
+// NavigationHelper.goTo(context, NewScreen());
+// NavigationHelper.goToAndReplace(context, NewScreen());
+// NavigationHelper.goToAndRemoveUntil(context, NewScreen());
+// NavigationHelper.goBack(context);
+// NavigationHelper.goBackWithResult(context, result);
+

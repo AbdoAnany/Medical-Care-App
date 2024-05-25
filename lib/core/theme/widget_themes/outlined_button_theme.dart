@@ -13,11 +13,13 @@ class TOutlinedButtonTheme {
     style: OutlinedButton.styleFrom(
       elevation: 0,
       foregroundColor: AppColor.dark,
-      side: const BorderSide(color: AppColor.borderPrimary),
+      side: const BorderSide(color:  WhiteColors.grey),
       textStyle:  TextStyle(fontSize:  TSizes.fontSizeMd, color: AppColor.black, fontWeight: FontWeight.w600),
       padding:  EdgeInsets.symmetric(vertical: TSizes.buttonHeight, horizontal: TSizes.lg24),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.buttonRadius)),
+      shape: RoundedRectangleBorder(side: BorderSide(color: WhiteColors.grey),
+          borderRadius: BorderRadius.circular(TSizes.buttonRadius)),
     ),
+
   );
 
   /* -- Dark Theme -- */

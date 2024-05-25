@@ -28,7 +28,7 @@ class MainButton extends StatelessWidget {
           onPressed: onPressed,
 
           child:  Text('$title',style:
-          CustomFontStyles.title3WhiteSemiBold16
+          MyFontStyles.whiteSemiBold16
             //    TextStyle(color: Colors.white),
           )),
     );
@@ -58,7 +58,7 @@ class MainButtonOutLine extends StatelessWidget {
           onPressed: onPressed,
 
           child:  Text('$title',style:
-          CustomFontStyles.title3MainSemiBold16
+          MyFontStyles.primarySemiBold16
             //    TextStyle(color: Colors.white),
           )),
     );

@@ -23,8 +23,21 @@ class TImages {
 
   // -- App onBoardingLine
   static const String logoWithName = "assets/images/logoWithName.png";
+  static const String egFlag = "assets/images/egFlag.png";
 
 
+  // -- App OTPScreen
+  static const String doneLogin = "assets/images/doneLogin.png";
+  static const String failLogin = "assets/images/fail.png";
+
+  // -- App HomeScreen
+  static const String bg_card = "assets/images/bg_card.png";
+  // -- App HomeScreen
+  static const String person_dr = "assets/images/person_dr.png";
+  static const String banner1 = "assets/images/banner.jpg";
+  static const String banner2 = "assets/images/banner2.jpg";
+  static const String banner3 = "assets/images/Rectangle.png";
+  static const String moktaber = "assets/images/Ellipse_2907.png";
 
 
   // // -- Social Logos
