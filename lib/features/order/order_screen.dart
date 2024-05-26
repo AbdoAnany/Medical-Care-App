@@ -2,6 +2,7 @@
 
 
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_care_app/core/constants/colors.dart';
@@ -84,9 +85,9 @@ class TabBarSection extends StatefulWidget {
   @override
   _TabBarSectionState createState() => _TabBarSectionState();
 }
+late TabController _tabController;
 
 class _TabBarSectionState extends State<TabBarSection> with SingleTickerProviderStateMixin {
-  late TabController _tabController;
 
   @override
   void initState() {
@@ -120,26 +121,52 @@ class _TabBarSectionState extends State<TabBarSection> with SingleTickerProvider
 class OrderList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
-        OrderCard(
-          status: 'غير مدفوع',
-          labName: 'عز لب',
-          paymentType: 'بطاقة الائتمانية',
-          totalAmount: '0 ج.م',
-          statusColor: Colors.red,
-          labIcon: TImages.person_dr,
+    return
+      TabBarView(
+          controller: _tabController,
+          children: [
+        ListView(
+          children: [
+            OrderCard(
+              status: 'غير مدفوع',
+              labName: 'عز لب',
+              paymentType: 'بطاقة الائتمانية',
+              totalAmount: '0 ج.م',
+              statusColor: Colors.red,
+              labIcon: TImages.person_dr,
+            ),
+            OrderCard(
+              status: 'قيد المراجعة',
+              labName: 'كيور أكسيميد',
+              paymentType: 'بطاقة الائتمانية',
+              totalAmount: '300 ج.م',
+              statusColor: Colors.orange,
+              labIcon: TImages.person_dr,
+            ),
+          ],
         ),
-        OrderCard(
-          status: 'قيد المراجعة',
-          labName: 'كيور أكسيميد',
-          paymentType: 'بطاقة الائتمانية',
-          totalAmount: '300 ج.م',
-          statusColor: Colors.orange,
-          labIcon: TImages.person_dr,
-        ),
-      ],
-    );
+        ListView(
+          children: [
+            OrderCard(
+              status: 'غير مدفوع',
+              labName: 'عز لب',
+              paymentType: 'بطاقة الائتمانية',
+              totalAmount: '0 ج.م',
+              statusColor: Colors.red,
+              labIcon: TImages.person_dr,
+            ),
+            OrderCard(
+              status: 'قيد المراجعة',
+              labName: 'كيور أكسيميد',
+              paymentType: 'بطاقة الائتمانية',
+              totalAmount: '300 ج.م',
+              statusColor: Colors.orange,
+              labIcon: TImages.person_dr,
+            ),
+          ],
+        )
+      ]);
+
   }
 }
 
@@ -164,13 +191,23 @@ class OrderCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.symmetric(vertical: 8.h, horizontal: 16.w),
-      child: Padding(
-        padding: EdgeInsets.all(16.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Padding(
+            padding:  EdgeInsets.symmetric(vertical: 16.0.h, horizontal: 8.0.w),
+            child: Row(
               children: [
+
+                CircleAvatar(
+                  backgroundImage: AssetImage(labIcon),
+                  radius: 20,
+                ),SizedBox(width: 8.w,),
+                Text(
+                  'رقم الطلب #2841',
+                  style: TextStyle(fontSize: 14.w, color: Colors.grey[600]),
+                ),
+                Spacer(),
                 Container(
                   padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 4.h),
                   decoration: BoxDecoration(
@@ -182,42 +219,80 @@ class OrderCard extends StatelessWidget {
                     style: TextStyle(fontSize: 12.w, color: statusColor),
                   ),
                 ),
-                Spacer(),
-                Text(
-                  'رقم الطلب #2841',
-                  style: TextStyle(fontSize: 14.w, color: Colors.grey[600]),
-                ),
+
               ],
             ),
-            SizedBox(height: 8),
-            Row(
+          ),
+      Divider(),
+          Padding(
+            padding:  EdgeInsets.symmetric(vertical: 26.0.h, horizontal: 16.0.w),
+
+            child: Row(
               children: [
-                CircleAvatar(
-                  backgroundImage: AssetImage(labIcon),
-                  radius: 20,
-                ),
+
                 SizedBox(width: 16),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'اسم المعمل: $labName',
-                      style: TextStyle(fontSize: 14.w, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      'نوع الدفع: $paymentType',
-                      style: TextStyle(fontSize: 14.w, color: Colors.grey[600]),
-                    ),
-                    Text(
-                      'إجمالي الدفع: $totalAmount',
-                      style: TextStyle(fontSize: 14.w, color: Colors.grey[600]),
-                    ),
-                  ],
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            'اسم المعمل:',
+                            style: TextStyle(fontSize: 18.w, fontWeight: FontWeight.normal),
+                          ),
+
+
+                          Text(
+                            '$labName',
+                            style: TextStyle(fontSize: 18.w, fontWeight: FontWeight.normal),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            'نوع الدفع:',
+                            style: TextStyle(fontSize: 18.w, fontWeight: FontWeight.normal),
+                          ),
+
+
+                          Text(
+                            '$paymentType',
+                            style: TextStyle(fontSize: 18.w, fontWeight: FontWeight.normal),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 20.h),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Text(
+                            'إجمالي الدفع:',
+                            style: TextStyle(fontSize: 18.w, fontWeight: FontWeight.normal),
+                          ),
+
+
+                          Text(
+                            '$totalAmount',
+                            style: TextStyle(fontSize: 18.w,color: AppColor.primary, fontWeight: FontWeight.normal),
+                          ),
+                        ],
+                      ),
+
+                    ],
+                  ),
                 ),
               ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
