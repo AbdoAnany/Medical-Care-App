@@ -40,6 +40,13 @@ class TImages {
   static const String moktaber = "assets/images/Ellipse_2907.png";
 
 
+
+  static const String ambulance = "assets/svgs/eee.svg";
+  static const String anan = "assets/svgs/ana.svg";
+  static const String hospital = "assets/svgs/hosp.svg";
+  static const String scan = "assets/svgs/scan.svg";
+
+
   // // -- Social Logos
   // static const String google = "assets/logos/google-icon.png";
   // static const String facebook = "assets/logos/facebook-icon.png";

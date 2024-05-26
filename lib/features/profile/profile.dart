@@ -1,5 +1,6 @@
 
 
+import 'package:easy_localization/easy_localization.dart' as eazy;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
@@ -12,151 +13,128 @@ import '../../core/constants/image_strings.dart';
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: SafeArea(
-        child: Scaffold(
-          // appBar: AppBar(
-          //   backgroundColor: Colors.white,
-          //   elevation: 0,
-          //   leading: Icon(Icons.arrow_back, color: Colors.black),
-          //   actions: [
-          //     Icon(Icons.more_vert, color: Colors.black),
-          //   ],
-          // ),
-          body: Column(
-            children: [
+    return Directionality(
+      textDirection: TextDirection.ltr
+         ,
+      child: Container(
+        color: Colors.white,
+        child: SafeArea(
+          child: Scaffold(
+            // appBar: AppBar(
+            //   backgroundColor: Colors.white,
+            //   elevation: 0,
+            //   leading: Icon(Icons.arrow_back, color: Colors.black),
+            //   actions: [
+            //     Icon(Icons.more_vert, color: Colors.black),
+            //   ],
+            // ),
+            body: Column(
+              children: [
+                Container(
+          color: AppColor.primaryPO.shade100
+                  ,
+                  padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
+                  width: double.infinity,
+                  child: Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 40,
+                        backgroundImage: AssetImage(TImages.person_dr), // Replace with your asset image
+                      ),
+                      SizedBox(height: 10),
+                      Text(
+                        'عبدالله عزالدين',
+                        style: TextStyle(
+                          fontSize: 22.w,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        '+20 10 153 2346',
+                        style: TextStyle(fontSize: 17.w,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  child: ListView(
+                    children: [
               Container(
-        color: AppColor.primaryPO.shade100
-                ,
-                padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
-                width: double.infinity,
-                child: Column(
+                margin: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16.r),
+                  border: Border.all(
+                    color: Colors.grey.shade300,),
+                  color: Colors.white,
+                ),
+                child:
+                Column(
                   children: [
-                    CircleAvatar(
-                      radius: 40,
-                      backgroundImage: AssetImage(TImages.person_dr), // Replace with your asset image
+                    ProfileListItem(
+                      icon: Iconsax.user,
+                      text: 'البيانات الشخصية',
                     ),
-                    SizedBox(height: 10),
-                    Text(
-                      'عبدالله عزالدين',
-                      style: TextStyle(
-                        fontSize: 22.w,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    ProfileListItem(
+                      icon: Iconsax.wallet,
+                      text: 'محفظتي',
                     ),
-                    Text(
-                      '+20 10 153 2346',
-                      style: TextStyle(fontSize: 17.w,
-                        color: Colors.grey,
-                      ),
+                    ProfileListItem(
+                      icon: Iconsax.notification,
+                      text: 'الإشعارات',
+                    ),
+                    ProfileListItem(
+                      icon: Iconsax.language_circle,
+                      text: 'اللغة',
+                      trailing: LanguageToggle(),
                     ),
                   ],
-                ),
-              ),
-              Expanded(
-                child: ListView(
-                  children: [
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(16.r),
-                border: Border.all(
-                  color: Colors.grey.shade300,),
-                color: Colors.white,
-              ),
-              child:
-              Column(
-                children: [
-                  ProfileListItem(
-                    icon: Iconsax.user,
-                    text: 'البيانات الشخصية',
-                  ),
-                  ProfileListItem(
-                    icon: Iconsax.wallet,
-                    text: 'محفظتي',
-                  ),
-                  ProfileListItem(
-                    icon: Iconsax.notification,
-                    text: 'الإشعارات',
-                  ),
-                  ProfileListItem(
-                    icon: Iconsax.language_circle,
-                    text: 'اللغة',
-                    trailing: LanguageToggle(),
-                  ),
-                ],
-              ),),
+                ),),
 
-                    Container(
-                      margin: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(16.r),
-                        border: Border.all(
-                          color: Colors.grey.shade300,),
-                        color: Colors.white,
+                      Container(
+                        margin: EdgeInsets.symmetric(vertical: 20.h, horizontal: 16.w),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(16.r),
+                          border: Border.all(
+                            color: Colors.grey.shade300,),
+                          color: Colors.white,
+                        ),
+                        child: Column(
+                          children: [
+                            ProfileListItem(
+                              icon: Iconsax.support,
+                              text: 'الدعم',
+                            ),
+                            ProfileListItem(
+                              icon: Iconsax.like_dislike,
+                              text: 'تقييم التطبيق',
+                            ),
+                            ProfileListItem(
+                              icon: Iconsax.message_question,
+                              text: 'الأسئلة المتكررة',
+                            ),
+                            ProfileListItem(
+                              icon: Iconsax.share,
+                              text: 'مشاركة التطبيق',
+                            ),
+                            ProfileListItem(
+                              icon: Iconsax.logout_1,
+                              text: 'تسجيل الخروج',
+                            ),
+                          ],
+                        ),
                       ),
-                      child: Column(
-                        children: [
-                          ProfileListItem(
-                            icon: Iconsax.support,
-                            text: 'الدعم',
-                          ),
-                          ProfileListItem(
-                            icon: Iconsax.like_dislike,
-                            text: 'تقييم التطبيق',
-                          ),
-                          ProfileListItem(
-                            icon: Iconsax.message_question,
-                            text: 'الأسئلة المتكررة',
-                          ),
-                          ProfileListItem(
-                            icon: Iconsax.share,
-                            text: 'مشاركة التطبيق',
-                          ),
-                          ProfileListItem(
-                            icon: Iconsax.logout_1,
-                            text: 'تسجيل الخروج',
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text('V1.2.0  |  سياسة الخصوصية  |  الشروط والأحكام'),
-              ),
-            ],
-          ),
-          bottomNavigationBar: BottomNavigationBar(
-            fixedColor: AppColor.primary,
-            unselectedItemColor: AppColor.darkerGrey,
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('V1.2.0  |  سياسة الخصوصية  |  الشروط والأحكام'),
+                ),
+              ],
+            ),
 
-
-            items: [
-              BottomNavigationBarItem(
-                icon: Icon(Iconsax.user),
-                label: 'الرئيسية',
-              ),
-
-              BottomNavigationBarItem(
-                icon: Icon(Iconsax.notification),
-                label: 'الرئيسية',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Iconsax.shopping_bag),
-                label: 'الرئيسية',
-              ),
-
-
-
-              BottomNavigationBarItem(
-                icon: Icon(Iconsax.home),
-                label: 'الرئيسية',
-              ),
-            ],
           ),
         ),
       ),
