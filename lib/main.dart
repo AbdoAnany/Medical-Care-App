@@ -16,7 +16,7 @@ import 'features/home/presentation/pages/home_screen.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
-  await initAppModule ();
+  await initAppModule();
 
   runApp(
     EasyLocalization(

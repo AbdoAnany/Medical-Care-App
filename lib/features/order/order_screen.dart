@@ -22,7 +22,7 @@ class _OrdersScreenState extends State<OrdersScreen> {
   Widget build(BuildContext context) {
     return Directionality(textDirection: TextDirection.rtl,
       child: Container(
-        color: Colors.teal[50],
+      //  color: Colors.teal[50],
         child: Scaffold(
           // appBar: AppBar(
           //   title: Text("طلبات"),
