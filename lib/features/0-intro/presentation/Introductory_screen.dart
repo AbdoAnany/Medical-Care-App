@@ -24,7 +24,7 @@ class _IntroductoryScreenState extends State<IntroductoryScreen> {
     return Scaffold(
       body: Column(children: [
         SizedBox(height: 48.h,),
-        Center(child: Image.asset(TImages.logoWithName,height: 98.h,width: 60.w,)),
+        Center(child: Image.asset(ImageApp.logoWithName,height: 98.h,width: 60.w,)),
         SizedBox(height: 38.h,),
         Padding(
           padding:  EdgeInsets.symmetric(horizontal: 16.w),

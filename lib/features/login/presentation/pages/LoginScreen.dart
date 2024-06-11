@@ -30,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             Center(
                 child: Image.asset(
-              TImages.logoWithName,
+              ImageApp.logoWithName,
               height: 98.h,
               width: 60.w,
             )),
@@ -82,7 +82,7 @@ class _LoginScreenState extends State<LoginScreen> {
                             width: 8.w,
                           ),
                           Image.asset(
-                            TImages.egFlag,
+                            ImageApp.egFlag,
                             height: 24.w,
                             width: 24.w,
                           ),

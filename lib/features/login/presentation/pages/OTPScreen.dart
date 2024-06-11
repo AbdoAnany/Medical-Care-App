@@ -33,7 +33,7 @@ class _OTPScreenState extends State<OTPScreen> {
             ),
             Center(
                 child: Image.asset(
-              TImages.logoWithName,
+              ImageApp.logoWithName,
               height: 98.h,
               width: 60.w,
             )),
@@ -57,7 +57,7 @@ class _OTPScreenState extends State<OTPScreen> {
             Padding(
               padding: EdgeInsets.symmetric(vertical: 36.h),
               child: SvgPicture.asset(
-                TImages.onBoardingLine,
+                ImageApp.onBoardingLine,
                 fit: BoxFit.fitWidth,
               ),
             ),
@@ -132,7 +132,7 @@ class _OTPScreenState extends State<OTPScreen> {
                           textAlign: TextAlign.center),
                     ),
                     SizedBox(height: 32.h),
-Image.asset(TImages.doneLogin,width: 168.w,height: 128.h,),
+Image.asset(ImageApp.doneLogin,width: 168.w,height: 128.h,),
                     Spacer(),
                     MainButton(title: TTexts.next,
                     onPressed: () {

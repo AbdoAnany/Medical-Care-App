@@ -58,7 +58,7 @@ class UserProfileSection extends StatelessWidget {
       child: Row(
         children: [
           CircleAvatar(
-            backgroundImage: AssetImage(TImages.person_dr),
+            backgroundImage: AssetImage(ImageApp.person_dr),
             radius: 30,
           ),
           SizedBox(width: 16.w),
@@ -133,7 +133,7 @@ class OrderList extends StatelessWidget {
               paymentType: 'بطاقة الائتمانية',
               totalAmount: '0 ج.م',
               statusColor: Colors.red,
-              labIcon: TImages.person_dr,
+              labIcon: ImageApp.person_dr,
             ),
             OrderCard(
               status: 'قيد المراجعة',
@@ -141,7 +141,7 @@ class OrderList extends StatelessWidget {
               paymentType: 'بطاقة الائتمانية',
               totalAmount: '300 ج.م',
               statusColor: Colors.orange,
-              labIcon: TImages.person_dr,
+              labIcon: ImageApp.person_dr,
             ),
           ],
         ),
@@ -153,7 +153,7 @@ class OrderList extends StatelessWidget {
               paymentType: 'بطاقة الائتمانية',
               totalAmount: '0 ج.م',
               statusColor: Colors.red,
-              labIcon: TImages.person_dr,
+              labIcon: ImageApp.person_dr,
             ),
             OrderCard(
               status: 'قيد المراجعة',
@@ -161,7 +161,7 @@ class OrderList extends StatelessWidget {
               paymentType: 'بطاقة الائتمانية',
               totalAmount: '300 ج.م',
               statusColor: Colors.orange,
-              labIcon: TImages.person_dr,
+              labIcon: ImageApp.person_dr,
             ),
           ],
         )

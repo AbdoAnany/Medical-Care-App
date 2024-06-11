@@ -12,6 +12,7 @@ import '../../../../core/helpers/helper_functions.dart';
 import '../../../../core/theme/style.dart';
 import '../../../order/order_screen.dart';
 import '../../../profile/profile.dart';
+import 'lab_details.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -101,7 +102,7 @@ class MainScreen extends StatelessWidget {
                       },
                       child:   CircleAvatar(
                         radius: 40,
-                        backgroundImage: AssetImage(TImages.person_dr), // Replace with your asset image
+                        backgroundImage: AssetImage(ImageApp.person_dr), // Replace with your asset image
                       ),
                     ),
                     Padding(
@@ -167,7 +168,7 @@ class MainScreen extends StatelessWidget {
                 ),
                 decoration: BoxDecoration(
                     image: DecorationImage(
-                        image: AssetImage(TImages.banner1),
+                        image: AssetImage(ImageApp.banner1),
                         fit: BoxFit.cover),
                     color: AppColor.lightContainer,
                     borderRadius: BorderRadius.circular(12)),
@@ -200,19 +201,19 @@ class MainScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ServiceIcon(
-                  icon: TImages.ambulance,
+                  icon: ImageApp.ambulance,
                   label: 'عيادة',
                 ),
                 ServiceIcon(
-                  icon: TImages.hospital,
+                  icon: ImageApp.hospital,
                   label: 'مستشفيات',
                 ),
                 ServiceIcon(
-                  icon: TImages.scan,
+                  icon: ImageApp.scan,
                   label: 'أشعة',
                 ),
                 ServiceIcon(
-                  icon: TImages.anan,
+                  icon: ImageApp.anan,
                   label: 'تحاليل',
                 ),
               ],
@@ -244,18 +245,23 @@ class MainScreen extends StatelessWidget {
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: [
-                LabCard(
-                  imageAvater: TImages.moktaber,
-                  image: TImages.banner3,
+                InkWell(
+                  onTap: () {
+                    NavigationHelper.goTo(LabDetails());
+                  },
+                  child: LabCard(
+                    imageAvater: ImageApp.moktaber,
+                    image: ImageApp.banner3,
 
-                  /// Replace with your asset image
-                  name: 'المختبر',
-                  rating: 3.2,
-                  distance: '40 عاماً من الخبرة',
+                    /// Replace with your asset image
+                    name: 'المختبر',
+                    rating: 3.2,
+                    distance: '40 عاماً من الخبرة',
+                  ),
                 ),
                 LabCard(
-                  imageAvater: TImages.moktaber,
-                  image: TImages.banner2, // Replace with your asset image
+                  imageAvater: ImageApp.moktaber,
+                  image: ImageApp.banner2, // Replace with your asset image
                   name: 'البرج',
                   rating: 4.5,
                   distance: '30 عاماً من الخبرة',
