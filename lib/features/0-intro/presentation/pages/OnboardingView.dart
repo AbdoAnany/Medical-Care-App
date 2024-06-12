@@ -5,14 +5,10 @@ import 'package:medical_care_app/core/constants/image_strings.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../../di.dart';
-
-import '../../../../core/constants/colors.dart';
-import '../../../../core/constants/sizes.dart';
 import '../../../../core/constants/text_strings.dart';
 import '../../../../core/helpers/helper_functions.dart';
 import '../../../../core/theme/style.dart';
 import '../../../../core/theme/widget_themes/switch_theme.dart';
-import '../../../../core/theme/widget_themes/text_theme.dart';
 import '../../../../core/widget/MainButton.dart';
 import '../../../home/presentation/pages/home_screen.dart';
 import '../Introductory_screen.dart';

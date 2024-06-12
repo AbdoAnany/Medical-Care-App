@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter/material.dart';
 
-import '../../main.dart';
 import '../../app.dart';
 
 class THelperFunctions {

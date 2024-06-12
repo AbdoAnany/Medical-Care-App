@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../../../di.dart';
-
 import '../../../../core/animation/Animation.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/sizes.dart';

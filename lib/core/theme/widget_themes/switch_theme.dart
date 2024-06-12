@@ -13,10 +13,12 @@ class MySwitchTheme extends StatelessWidget {
         value: them.isDarkModeEnabled,
         onChanged: (value) {
           them.isDarkModeEnabled = value;
-          ThemeMode selectedThemeMode = them.isDarkModeEnabled ? ThemeMode.dark : ThemeMode.light;
+          ThemeMode selectedThemeMode = them.isDarkModeEnabled ?
+          ThemeMode.dark : ThemeMode.light;
           them.setThemeMode(selectedThemeMode);
         },
       );
     });
   }
 }
+//Abdelrahman Anany portmyportfolio.

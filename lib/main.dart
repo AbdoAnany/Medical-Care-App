@@ -1,17 +1,8 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:get_it/get_it.dart';
 
 import 'app.dart';
 import 'di.dart';
-
-
-
-
-import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
-
-import 'features/home/presentation/pages/home_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,9 +11,9 @@ Future<void> main() async {
 
   runApp(
     EasyLocalization(
-      supportedLocales: [Locale('en', 'US'), Locale('ar', 'EG')],
+      supportedLocales: [const Locale('en', 'US'), const Locale('ar', 'EG')],
       path: 'assets/tr', // <-- change the path of the translation files
-      fallbackLocale: Locale('ar', 'EG'),
+      fallbackLocale: const Locale('ar', 'EG'),
       child: MyApp(),
     ),
   );
@@ -34,20 +25,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         fontFamily: 'Tajawal',
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
         useMaterial3: true,
-
       ),
       locale: context.locale,
       supportedLocales: context.supportedLocales,
       localizationsDelegates: context.localizationDelegates,
       debugShowCheckedModeBanner: false,
-      home:App(),
+      home: const App(),
     );
   }
 }
-
 
 // class MyApp extends StatelessWidget {
 //   const MyApp({super.key});

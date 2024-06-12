@@ -6,8 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_care_app/core/constants/colors.dart';
 import 'package:medical_care_app/core/theme/widget_themes/text_theme.dart';
-
-import '../constants/sizes.dart';
 class CustomFontWeight {
   static const FontWeight tajawalThin =  FontWeight.w900;
   static const FontWeight tajawalExtraBold =  FontWeight.w800;
@@ -36,7 +34,8 @@ class MyFontStyles {
     fontWeight: CustomFontWeight.tajawalBold,
     fontSize: 24.w,
   );
-  static TextStyle? blackBold24 =  AppTextTheme.headlineSmall?.copyWith(fontWeight: FontWeight.w700);
+  static TextStyle? blackBold24 =  AppTextTheme.headlineSmall?.
+  copyWith(fontWeight: FontWeight.w700);
 
   // TextStyle(
   //   fontFamily: primaryFontFamily,

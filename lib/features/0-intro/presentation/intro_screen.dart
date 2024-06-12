@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import '../../../core/theme/widget_themes/switch_theme.dart';
-import '../../../features/0-intro/presentation/pages/OnboardingView.dart';
 import 'package:medical_care_app/features/0-intro/presentation/pages/SplashScreen.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../../di.dart';
+import '../../../features/0-intro/presentation/pages/OnboardingView.dart';
 class IntroScreen extends StatefulWidget {
   static const String onBoarding = 'onBoarding';
   const IntroScreen({super.key});

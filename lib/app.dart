@@ -8,7 +8,6 @@ import 'core/constants/text_strings.dart';
 import 'core/theme/theme.dart';
 import 'core/theme/widget_themes/text_theme.dart';
 import 'features/0-intro/presentation/intro_screen.dart';
-import 'features/home/presentation/pages/home_screen.dart';
 
 class Get {
   static final GlobalKey<NavigatorState> navigatorKey =

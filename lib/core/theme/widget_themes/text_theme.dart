@@ -1,13 +1,5 @@
-import 'dart:ui';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
-import 'package:medical_care_app/core/theme/widget_themes/text_theme.dart';
 
-import '../../../app.dart';
-import '../../constants/colors.dart';
 import '../theme.dart';
 
 /// Custom Class for Light & Dark Text Themes

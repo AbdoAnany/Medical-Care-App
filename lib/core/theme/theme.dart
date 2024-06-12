@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_care_app/core/theme/style.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
 import '../../core/theme/widget_themes/appbar_theme.dart';
 import '../../core/theme/widget_themes/bottom_sheet_theme.dart';
 import '../../core/theme/widget_themes/checkbox_theme.dart';
@@ -11,7 +12,6 @@ import '../../core/theme/widget_themes/icon_theme.dart';
 import '../../core/theme/widget_themes/outlined_button_theme.dart';
 import '../../core/theme/widget_themes/text_field_theme.dart';
 import '../../core/theme/widget_themes/text_theme.dart';
-
 import '../../di.dart';
 import '../constants/colors.dart';
 

@@ -1,6 +1,5 @@
 
 
-import 'package:easy_localization/easy_localization.dart' as eazy;
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
