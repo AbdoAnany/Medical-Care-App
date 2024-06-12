@@ -14,6 +14,6 @@ Future<void> initAppModule() async {
   await TDioHelper.init();
   final prefs = await SharedPreferences.getInstance();
   sl.registerLazySingleton<SharedPreferences>(() => prefs);
-  sl.registerLazySingleton<TTextTheme>(() => TTextTheme());
+  sl.registerLazySingleton<AppTextTheme>(() => AppTextTheme());
 }
 

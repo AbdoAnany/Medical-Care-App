@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../core/theme/widget_themes/switch_theme.dart';
 import '../../../features/0-intro/presentation/pages/OnboardingView.dart';
 import 'package:medical_care_app/features/0-intro/presentation/pages/SplashScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -20,6 +21,8 @@ class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+
       body: onBoardingShow ? const OnBoardingView() : const SplashScreen(),
     );
   }

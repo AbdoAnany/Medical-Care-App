@@ -4,14 +4,15 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:medical_care_app/core/theme/widget_themes/text_theme.dart';
 
 import '../../../app.dart';
 import '../../constants/colors.dart';
 import '../theme.dart';
 
 /// Custom Class for Light & Dark Text Themes
-class TTextTheme {
-  TTextTheme(); // To avoid creating instances
+class AppTextTheme {
+  AppTextTheme(); // To avoid creating instances
   static TextStyle? displayLarge;
   static TextStyle? displayMedium;
   static TextStyle? displaySmall;
@@ -38,9 +39,9 @@ class TTextTheme {
           : textStyleHandlerLight(style);
 
   static TextStyle? textStyleHandlerLight(TextStyle? style) =>
-      style?.copyWith(fontSize: style.fontSize, color: AppColor.dark);
+      style?.copyWith(fontSize: style.fontSize, color: style.color);
   static TextStyle? textStyleHandlerDark(TextStyle? style) =>
-      style?.copyWith(fontSize: style.fontSize, color: AppColor.light);
+      style?.copyWith(fontSize: style.fontSize, color: style.color);
 
   static init(BuildContext context, ThemeProvider theme) {
     final textTheme = Theme.of(context).textTheme;
@@ -70,39 +71,39 @@ class TTextTheme {
 
   /// Customizable Light Text Theme
   static TextTheme lightTextTheme = TextTheme(
-    displayLarge: const TextStyle().copyWith(),
-    displayMedium: const TextStyle().copyWith(),
-    displaySmall: const TextStyle().copyWith(),
-    headlineLarge: const TextStyle().copyWith(),
-    headlineMedium: const TextStyle().copyWith(),
-    headlineSmall: const TextStyle().copyWith(),
-    titleLarge: const TextStyle().copyWith(),
-    titleMedium: const TextStyle().copyWith(),
-    titleSmall: const TextStyle().copyWith(),
-    bodyLarge: const TextStyle().copyWith(),
-    bodyMedium: const TextStyle().copyWith(),
-    bodySmall: const TextStyle().copyWith(),
-    labelLarge: const TextStyle().copyWith(),
-    labelMedium: const TextStyle().copyWith(),
-    labelSmall: const TextStyle().copyWith(),
+    displayLarge: AppTextTheme.displayLarge,
+    displayMedium:AppTextTheme.displayMedium,
+    displaySmall:AppTextTheme.displaySmall,
+    headlineLarge: AppTextTheme.headlineLarge,
+    headlineMedium:AppTextTheme.headlineMedium,
+    headlineSmall:  AppTextTheme.headlineSmall,
+    titleLarge: AppTextTheme.titleLarge,
+    titleMedium: AppTextTheme.titleMedium,
+    titleSmall:  AppTextTheme.titleSmall,
+    bodyLarge:  AppTextTheme.bodyLarge,
+    bodyMedium: AppTextTheme.bodyMedium,
+    bodySmall:  AppTextTheme.bodySmall,
+    labelLarge:  AppTextTheme.labelLarge,
+    labelMedium:  AppTextTheme.labelMedium,
+    labelSmall:  AppTextTheme.labelSmall,
   );
 
   /// Customizable Dark Text Theme
   static TextTheme darkTextTheme = TextTheme(
-    displayLarge: const TextStyle().copyWith(),
-    displayMedium: const TextStyle().copyWith(),
-    displaySmall: const TextStyle().copyWith(),
-    headlineLarge: const TextStyle().copyWith(),
-    headlineMedium: const TextStyle().copyWith(),
-    headlineSmall: const TextStyle().copyWith(),
-    titleLarge: const TextStyle().copyWith(),
-    titleMedium: const TextStyle().copyWith(),
-    titleSmall: const TextStyle().copyWith(),
-    bodyLarge: const TextStyle().copyWith(),
-    bodyMedium: const TextStyle().copyWith(),
-    bodySmall: const TextStyle().copyWith(),
-    labelLarge: const TextStyle().copyWith(),
-    labelMedium: const TextStyle().copyWith(),
-    labelSmall: const TextStyle().copyWith(),
+    displayLarge: AppTextTheme.displayLarge,
+    displayMedium:AppTextTheme.displayMedium,
+    displaySmall:AppTextTheme.displaySmall,
+    headlineLarge: AppTextTheme.headlineLarge,
+    headlineMedium:AppTextTheme.headlineMedium,
+    headlineSmall:  AppTextTheme.headlineSmall,
+    titleLarge: AppTextTheme.titleLarge,
+    titleMedium: AppTextTheme.titleMedium,
+    titleSmall:  AppTextTheme.titleSmall,
+    bodyLarge:  AppTextTheme.bodyLarge,
+    bodyMedium: AppTextTheme.titleLarge,
+    bodySmall:  AppTextTheme.bodySmall,
+    labelLarge:  AppTextTheme.labelLarge,
+    labelMedium:  AppTextTheme.labelMedium,
+    labelSmall:  AppTextTheme.labelSmall,
   );
 }

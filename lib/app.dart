@@ -10,14 +10,12 @@ import 'core/theme/widget_themes/text_theme.dart';
 import 'features/0-intro/presentation/intro_screen.dart';
 import 'features/home/presentation/pages/home_screen.dart';
 
-
-
 class Get {
-  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
+  static final GlobalKey<NavigatorState> navigatorKey =
+      GlobalKey<NavigatorState>();
 
   static BuildContext get context => navigatorKey.currentContext!;
   static NavigatorState get navigator => navigatorKey.currentState!;
-
 }
 
 class App extends StatelessWidget {
@@ -27,25 +25,28 @@ class App extends StatelessWidget {
     return MultiProvider(
         providers: [
           ChangeNotifierProvider(create: (context) => ThemeProvider()),
-         // BlocProvider(create: (context) => LoginCubit( )),
-     //     BlocProvider(create: (context) => HomeBloc()),
+          // BlocProvider(create: (context) => LoginCubit( )),
+          //     BlocProvider(create: (context) => HomeBloc()),
         ],
         child: Consumer<ThemeProvider>(builder: (context, them, c) {
+          AppTextTheme.init(context, them);
           them.getThemeMode();
           TSizes.init(context: context);
           ScreenUtil.init(context);
+
+          print(them.themeMode.name);
           return ScreenUtilInit(
               designSize: Size(
                 TSizes.uiSW,
                 TSizes.uiSH,
               ),
-             minTextAdapt: true,
-             splitScreenMode: true,
+              minTextAdapt: true,
+              splitScreenMode: true,
               useInheritedMediaQuery: true,
               ensureScreenSize: true,
-              child:  MaterialApp(
-                  builder: (context,w){
-                    TTextTheme.init(context,them);
+              child: MaterialApp(
+                  builder: (context, w) {
+
                     return w!;
                   },
                   supportedLocales: context.supportedLocales,
@@ -53,13 +54,12 @@ class App extends StatelessWidget {
                   navigatorKey: Get.navigatorKey,
                   title: TTexts.appName,
                   themeMode: them.themeMode,
-                  theme: TAppTheme.lightTheme,
+                  theme: them.isDarkModeEnabled
+                      ? TAppTheme.darkTheme
+                      : TAppTheme.lightTheme,
                   darkTheme: TAppTheme.darkTheme,
                   debugShowCheckedModeBanner: false,
-                  home:
-                  //HomeScreen(),
-                  const IntroScreen()
-              ));
+                  home: const IntroScreen()));
         }));
   }
 }

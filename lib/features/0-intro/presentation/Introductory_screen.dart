@@ -120,7 +120,7 @@ value: selectedGav,
           ),
         ),
 
-        selectedGav==null||true?SizedBox(height: 77.h,):
+        selectedGav==null?SizedBox(height: 77.h,):
 
         Container(height: 77.h,
           padding:  EdgeInsets.symmetric( horizontal: 16.0.w,vertical: 12.h),
@@ -320,7 +320,7 @@ List GovList= [
         },
         {
             "GovId": 28,
-            "ArabicName": "السويس 5"
+            "ArabicName": "السويس"
         }
     ];
 List CityList=[
@@ -336,7 +336,7 @@ List CityList=[
         },
         {
             "CityID": 3,
-            "CityArabicName": " بركة السبع",
+            "CityArabicName": "بركة السبع",
             "GovID": 1
         },
         {
@@ -421,7 +421,7 @@ List CityList=[
         },
         {
             "CityID": 20,
-            "CityArabicName": "الازاريطه ",
+            "CityArabicName": "الازاريطه",
             "GovID": 2
         },
         {
@@ -451,7 +451,7 @@ List CityList=[
         },
         {
             "CityID": 26,
-            "CityArabicName": "جليم ",
+            "CityArabicName": "جليم",
             "GovID": 2
         },
         {
@@ -501,7 +501,7 @@ List CityList=[
         },
         {
             "CityID": 36,
-            "CityArabicName": "رشدي‎",
+            "CityArabicName": "رشدي",
             "GovID": 2
         },
         {
@@ -521,12 +521,12 @@ List CityList=[
         },
         {
             "CityID": 40,
-            "CityArabicName": "سيدى كرير ",
+            "CityArabicName": "سيدى كرير",
             "GovID": 2
         },
         {
             "CityID": 41,
-            "CityArabicName": "سموحه ",
+            "CityArabicName": "سموحه",
             "GovID": 2
         },
         {
@@ -576,7 +576,7 @@ List CityList=[
         },
         {
             "CityID": 51,
-            "CityArabicName": "الجمرك‎",
+            "CityArabicName": "الجمرك",
             "GovID": 2
         },
         {
@@ -586,7 +586,7 @@ List CityList=[
         },
         {
             "CityID": 53,
-            "CityArabicName": " كنج مريوط",
+            "CityArabicName": "كنج مريوط",
             "GovID": 2
         },
         {
@@ -606,7 +606,7 @@ List CityList=[
         },
         {
             "CityID": 57,
-            "CityArabicName": "قسم الرمل ",
+            "CityArabicName": "قسم الرمل",
             "GovID": 2
         },
         {
@@ -621,7 +621,7 @@ List CityList=[
         },
         {
             "CityID": 60,
-            "CityArabicName": " أسيوط الجديدة",
+            "CityArabicName": "أسيوط الجديدة",
             "GovID": 3
         },
         {
@@ -651,12 +651,12 @@ List CityList=[
         },
         {
             "CityID": 66,
-            "CityArabicName": " الفتح",
+            "CityArabicName": "الفتح",
             "GovID": 3
         },
         {
             "CityID": 67,
-            "CityArabicName": "منفلوط ",
+            "CityArabicName": "منفلوط",
             "GovID": 3
         },
         {
@@ -681,12 +681,12 @@ List CityList=[
         },
         {
             "CityID": 72,
-            "CityArabicName": "اسيوط 2",
+            "CityArabicName": "اسيوط",
             "GovID": 3
         },
         {
             "CityID": 73,
-            "CityArabicName": " أبو سمبل",
+            "CityArabicName": "أبو سمبل",
             "GovID": 4
         },
         {
@@ -726,7 +726,7 @@ List CityList=[
         },
         {
             "CityID": 81,
-            "CityArabicName": " نصر النوبة",
+            "CityArabicName": "نصر النوبة",
             "GovID": 4
         },
         {
@@ -761,7 +761,7 @@ List CityList=[
         },
         {
             "CityID": 88,
-            "CityArabicName": " بنى سويف",
+            "CityArabicName": "بنى سويف",
             "GovID": 5
         },
         {
@@ -861,7 +861,7 @@ List CityList=[
         },
         {
             "CityID": 108,
-            "CityArabicName": " حوش عيسى",
+            "CityArabicName": "حوش عيسى",
             "GovID": 6
         },
         {
@@ -891,7 +891,7 @@ List CityList=[
         },
         {
             "CityID": 114,
-            "CityArabicName": " مطوبس",
+            "CityArabicName": "مطوبس",
             "GovID": 6
         },
         {
@@ -1046,7 +1046,7 @@ List CityList=[
         },
         {
             "CityID": 145,
-            "CityArabicName": "هليوبوليس ",
+            "CityArabicName": "هليوبوليس",
             "GovID": 7
         },
         {
@@ -1396,7 +1396,7 @@ List CityList=[
         },
         {
             "CityID": 215,
-            "CityArabicName": " دمياط الجديدة",
+            "CityArabicName": "دمياط الجديدة",
             "GovID": 9
         },
         {
@@ -1406,7 +1406,7 @@ List CityList=[
         },
         {
             "CityID": 217,
-            "CityArabicName": "قسم دمياط 01",
+            "CityArabicName": "قسم دمياط الاول",
             "GovID": 9
         },
         {
@@ -1416,7 +1416,7 @@ List CityList=[
         },
         {
             "CityID": 219,
-            "CityArabicName": "قسم دمياط 02",
+            "CityArabicName": "قسم دمياط الثاني",
             "GovID": 9
         },
         {
@@ -1606,12 +1606,12 @@ List CityList=[
         },
         {
             "CityID": 257,
-            "CityArabicName": "المنيل‎",
+            "CityArabicName": "المنيل",
             "GovID": 12
         },
         {
             "CityID": 258,
-            "CityArabicName": "المهندسين‎",
+            "CityArabicName": "المهندسين",
             "GovID": 12
         },
         {
@@ -1696,7 +1696,7 @@ List CityList=[
         },
         {
             "CityID": 275,
-            "CityArabicName": " الكشافة البحرية ",
+            "CityArabicName": "الكشافة البحرية",
             "GovID": 12
         },
         {
@@ -1796,12 +1796,12 @@ List CityList=[
         },
         {
             "CityID": 295,
-            "CityArabicName": " ابو صوير",
+            "CityArabicName": "ابو صوير",
             "GovID": 13
         },
         {
             "CityID": 296,
-            "CityArabicName": " التل الكبير",
+            "CityArabicName": "التل الكبير",
             "GovID": 13
         },
         {
@@ -1821,7 +1821,7 @@ List CityList=[
         },
         {
             "CityID": 300,
-            "CityArabicName": "نفيشة ",
+            "CityArabicName": "نفيشة",
             "GovID": 13
         },
         {
@@ -1946,7 +1946,7 @@ List CityList=[
         },
         {
             "CityID": 325,
-            "CityArabicName": "طيبة ",
+            "CityArabicName": "طيبة",
             "GovID": 15
         },
         {
@@ -1956,7 +1956,7 @@ List CityList=[
         },
         {
             "CityID": 327,
-            "CityArabicName": " البياضية",
+            "CityArabicName": "البياضية",
             "GovID": 15
         },
         {
@@ -2006,7 +2006,7 @@ List CityList=[
         },
         {
             "CityID": 337,
-            "CityArabicName": " ماربيلا",
+            "CityArabicName": "ماربيلا",
             "GovID": 16
         },
         {
@@ -2041,7 +2041,7 @@ List CityList=[
         },
         {
             "CityID": 344,
-            "CityArabicName": "ديرمواس ",
+            "CityArabicName": "ديرمواس",
             "GovID": 17
         },
         {
@@ -2071,7 +2071,7 @@ List CityList=[
         },
         {
             "CityID": 350,
-            "CityArabicName": "سمالوط ",
+            "CityArabicName": "سمالوط",
             "GovID": 17
         },
         {
@@ -2111,7 +2111,7 @@ List CityList=[
         },
         {
             "CityID": 358,
-            "CityArabicName": " توشكى",
+            "CityArabicName": "توشكى",
             "GovID": 18
         },
         {
@@ -2146,7 +2146,7 @@ List CityList=[
         },
         {
             "CityID": 365,
-            "CityArabicName": " المناصرة",
+            "CityArabicName": "المناصرة",
             "GovID": 21
         },
         {
@@ -2161,7 +2161,7 @@ List CityList=[
         },
         {
             "CityID": 368,
-            "CityArabicName": "قسم الجنوب 02",
+            "CityArabicName": "قسم الجنوب الثاني",
             "GovID": 21
         },
         {
@@ -2176,7 +2176,7 @@ List CityList=[
         },
         {
             "CityID": 371,
-            "CityArabicName": "قسم الجنوب 01",
+            "CityArabicName": "قسم الجنوب الاول",
             "GovID": 21
         },
         {
@@ -2241,7 +2241,7 @@ List CityList=[
         },
         {
             "CityID": 384,
-            "CityArabicName": "مسطرد ",
+            "CityArabicName": "مسطرد",
             "GovID": 22
         },
         {
@@ -2311,7 +2311,7 @@ List CityList=[
         },
         {
             "CityID": 398,
-            "CityArabicName": "فرشوط ",
+            "CityArabicName": "فرشوط",
             "GovID": 23
         },
         {
@@ -2636,7 +2636,7 @@ List CityList=[
         },
         {
             "CityID": 463,
-            "CityArabicName": " حى الاربعين",
+            "CityArabicName": "حى الاربعين",
             "GovID": 28
         },
         {
@@ -2661,7 +2661,7 @@ List CityList=[
         },
         {
             "CityID": 468,
-            "CityArabicName": "فيصل ",
+            "CityArabicName": "فيصل",
             "GovID": 28
         },
         {

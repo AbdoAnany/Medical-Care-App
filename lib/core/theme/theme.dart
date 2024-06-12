@@ -25,10 +25,10 @@ class TAppTheme {
     disabledColor: AppColor.grey,
     brightness: Brightness.light,
     primaryColor: AppColor.primary,
-    textTheme: TTextTheme.lightTextTheme,
+    textTheme: AppTextTheme.lightTextTheme,
     chipTheme: TChipTheme.lightChipTheme,
     iconButtonTheme: TIconButtonTheme.lightIconButtonTheme,
-    scaffoldBackgroundColor: AppColor.blueWhite,
+    scaffoldBackgroundColor: AppColor.backgroundLight,
     appBarTheme: TAppBarTheme.lightAppBarTheme,
     iconTheme: TIconTheme.lightIconTheme,
     checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
@@ -44,9 +44,9 @@ class TAppTheme {
     disabledColor: AppColor.grey,
     brightness: Brightness.dark,
     primaryColor: AppColor.primary,
-    textTheme: TTextTheme.darkTextTheme,
+    textTheme: AppTextTheme.darkTextTheme,
     chipTheme: TChipTheme.darkChipTheme,
-    scaffoldBackgroundColor: AppColor.scaffoldBackgroundColor,
+    scaffoldBackgroundColor: AppColor.backgroundDark,
     appBarTheme: TAppBarTheme.darkAppBarTheme,
     iconTheme: TIconTheme.darkIconTheme,
     iconButtonTheme: TIconButtonTheme.darkIconButtonTheme,
@@ -75,5 +75,6 @@ class ThemeProvider extends ChangeNotifier {
     bool isDark = sl<SharedPreferences>().getBool('isDark') ?? false;
     isDarkModeEnabled = isDark;
     _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
+
   }
 }
