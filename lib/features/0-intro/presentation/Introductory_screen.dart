@@ -8,6 +8,7 @@ import 'package:medical_care_app/core/constants/colors.dart';
 import '../../../core/constants/image_strings.dart';
 import '../../../core/helpers/helper_functions.dart';
 import '../../../core/theme/style.dart';
+import '../../../core/theme/widget_themes/switch_theme.dart';
 import '../../../core/widget/MainButton.dart';
 import '../../login/presentation/pages/LoginScreen.dart';
 
@@ -29,7 +30,7 @@ class _IntroductoryScreenState extends State<IntroductoryScreen> {
         Padding(
           padding:  EdgeInsets.symmetric(horizontal: 16.w),
           child: Text('تخصيص التطبيق',
-              style: MyFontStyles.blackBold24),
+              style:Theme.of(context).textTheme.headlineSmall),
         ),
         SizedBox(height: 16.h),
         Padding(
@@ -37,19 +38,20 @@ class _IntroductoryScreenState extends State<IntroductoryScreen> {
           child: Text('يمكنك تخصيص التطبيق من خلال اختيار المنطقة واللغة المستخدمة.',
               style: MyFontStyles.greyMedium18, textAlign: TextAlign.center),
         ),
-        SizedBox(height: 58.h),
-        Padding(
-          padding:  EdgeInsets.symmetric( horizontal: 16.0.w,vertical: 12.h),
+       SizedBox(height: 58.h),
+
+        Container(height: 56.h,
+          padding:  EdgeInsets.symmetric( horizontal: 16.0.w,),
           child: Directionality(textDirection: TextDirection.rtl,
             child: DropdownButtonFormField2<Map<String,dynamic>>(
-            alignment: AlignmentDirectional.centerEnd,
+
               style:  MyFontStyles.greyRegular15,
 value: selectedGav,
               decoration: InputDecoration(
 
                contentPadding:  EdgeInsets.symmetric(vertical: 16.h,horizontal: 16.w),
 
-                label: Text("المحافظة ",    style:  MyFontStyles.blackBold24),
+                label: Text("المحافظة ",    style: Theme.of(context).textTheme.headlineSmall),
 
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide( color: WhiteColors.grey),
@@ -63,7 +65,7 @@ value: selectedGav,
               ),
               hint:  Text(
                 "اختر المحافظة ",
-                style: MyFontStyles.greyMedium18,
+                style: MyFontStyles.greyMedium18
               ),
               items: GovList
                   .map((item) => DropdownMenuItem<Map<String,dynamic>>(
@@ -71,7 +73,7 @@ value: selectedGav,
                 value: item,
                 child: Text(
                   item['ArabicName'],
-                  style: MyFontStyles.greyMedium18,
+                  style:MyFontStyles.greyMedium18
                 ),
               ))
                   .toList(),
@@ -120,22 +122,22 @@ value: selectedGav,
           ),
         ),
 
-        selectedGav==null?SizedBox(height: 77.h,):
-
-        Container(height: 77.h,
-          padding:  EdgeInsets.symmetric( horizontal: 16.0.w,vertical: 12.h),
+        selectedGav==null?SizedBox(height: 56.h,):
+        SizedBox(height: 24.h,),
+        Container(height: 56.h,
+         padding:  EdgeInsets.symmetric( horizontal: 16.0.w,),
           child: Directionality(
             textDirection: TextDirection.rtl,
 
             child: DropdownButtonFormField2<Map<String,dynamic>>(
 
-              alignment: AlignmentDirectional.centerEnd,
+
               style:  MyFontStyles.greyRegular15,
               decoration: InputDecoration(
 
                 contentPadding:  EdgeInsets.symmetric(vertical: 16.h,horizontal: 16.w),
 
-                label: Text("المنطقة",    style:  MyFontStyles.blackBold24),
+                label: Text("المنطقة",    style:  Theme.of(context).textTheme.headlineSmall),
 
                 enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide( color: WhiteColors.grey),
@@ -190,8 +192,76 @@ value: selectedGav,
             ),
           ),
         ),
+        SizedBox(height: 24.h,),
+        Container(height: 56.h,
+          padding:  EdgeInsets.symmetric( horizontal: 16.0.w,),
+          child: Directionality(
+            textDirection: TextDirection.rtl,
 
-        SizedBox(height: 77.h,),
+            child: DropdownButtonFormField2<String>(
+
+
+              style:  MyFontStyles.greyRegular15,
+              decoration: InputDecoration(
+
+                contentPadding:  EdgeInsets.symmetric(vertical: 16.h,horizontal: 16.w),
+
+                label: Text("اللغة",    style:  Theme.of(context).textTheme.headlineSmall),
+
+                enabledBorder: OutlineInputBorder(
+                  borderSide: BorderSide( color: WhiteColors.grey),
+
+                  borderRadius: BorderRadius.circular(15), ),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(15),),
+                // Add more decoration..
+              ),
+              hint:  Text(
+                "العربية",
+                style: MyFontStyles.greyMedium18,
+              ),
+              items:['العربية',"English"]
+                  .map((item) => DropdownMenuItem<String>(
+                alignment: AlignmentDirectional.centerEnd,
+                value: item,
+                child: Text(
+                  item,
+                  style: MyFontStyles.greyMedium18,
+                ),
+              ))
+                  .toList(),
+              validator: (value) {
+                if (value == null) {
+                  return "اختر المنطقة";
+                }
+                return null;
+              },
+              onChanged: (value) {
+             //   selectedCity = value;
+              },
+              onSaved: (value) {
+
+              },
+              buttonStyleData:  ButtonStyleData(padding: EdgeInsets.only(left: 8.w),),
+              iconStyleData: const IconStyleData(
+
+                icon: Icon(
+                  Iconsax.arrow_down_14,
+                  color: WhiteColors.textDarkGrey,
+                ),
+                iconSize: 24,
+              ),
+              dropdownStyleData: DropdownStyleData(
+                maxHeight: 300,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
+
+            ),
+          ),
+        ),
+        // SizedBox(height: 20.h,),
         SizedBox(height: 40.h),
         MainButton(title: "تسجيل الدخول",
         onPressed: (){

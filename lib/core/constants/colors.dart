@@ -123,6 +123,7 @@ class WhiteColors {
   // grey color variations
   static const Color grey = Color(0xFFA6A6A6);
   // grey color variations
+
   static const Color textDarkGrey = Color(0xFF8E8E8E);
   static const Color textDarkerGrey = Color(0xFF4E4E4E);
 }

@@ -28,8 +28,10 @@ class App extends StatelessWidget {
           //     BlocProvider(create: (context) => HomeBloc()),
         ],
         child: Consumer<ThemeProvider>(builder: (context, them, c) {
-          AppTextTheme.init(context, them);
-          them.getThemeMode();
+
+        final themeMode =  them.getThemeMode();
+        final isDark =  them.getThemeModeIsDark();
+       //   AppTextTheme.init(context, them);
           TSizes.init(context: context);
           ScreenUtil.init(context);
 
@@ -44,22 +46,33 @@ class App extends StatelessWidget {
               useInheritedMediaQuery: true,
               ensureScreenSize: true,
               child: MaterialApp(
-                  builder: (context, w) {
-
-                    return w!;
-                  },
+                  builder: (context, w) => w!,
+                  debugShowCheckedModeBanner: false,
                   supportedLocales: context.supportedLocales,
                   localizationsDelegates: context.localizationDelegates,
                   navigatorKey: Get.navigatorKey,
                   title: TTexts.appName,
-                  themeMode: them.themeMode,
-                  theme: them.isDarkModeEnabled
-                      ? TAppTheme.darkTheme
-                      : TAppTheme.lightTheme,
-                  darkTheme: TAppTheme.darkTheme,
-                  debugShowCheckedModeBanner: false,
+                  theme: isDark ? AppTheme.darkTheme : AppTheme.lightTheme,
+
                   home: const IntroScreen()));
         }));
   }
 }
 //sbp_0777c39fd3cec540cb5094f21bd1703e4d49012e
+// class MyApp extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return MaterialApp(
+//       theme: ThemeData(
+//         fontFamily: 'Tajawal',
+//         colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+//         useMaterial3: true,
+//       ),
+//       locale: context.locale,
+//       supportedLocales: context.supportedLocales,
+//       localizationsDelegates: context.localizationDelegates,
+//       debugShowCheckedModeBanner: false,
+//       home: const App(),
+//     );
+//   }
+// }

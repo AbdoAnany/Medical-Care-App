@@ -81,8 +81,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                MySwitchTheme(),
-                SizedBox(height: 30.h),
+
+                SizedBox(height: 80.h),
                 Center(
                   child: SizedBox(
                       height: 194.58.h,
@@ -117,7 +117,9 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Text(controller.items[index].title,
-                      style: MyFontStyles.blackBold24),
+                      style:Theme.of(context).textTheme.headlineSmall
+                   //   MyFontStyles.blackBold24
+                  ),
                 ),
                 SizedBox(height: 16.h),
                 Padding(

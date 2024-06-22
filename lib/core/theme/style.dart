@@ -1,20 +1,18 @@
-
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:medical_care_app/core/constants/colors.dart';
 import 'package:medical_care_app/core/theme/widget_themes/text_theme.dart';
+
+import '../../app.dart';
+
 class CustomFontWeight {
-  static const FontWeight tajawalThin =  FontWeight.w900;
-  static const FontWeight tajawalExtraBold =  FontWeight.w800;
+  static const FontWeight tajawalThin = FontWeight.w900;
+  static const FontWeight tajawalExtraBold = FontWeight.w800;
   static const FontWeight tajawalBold = FontWeight.w700;
   static const FontWeight tajawalExtraLight = FontWeight.w200;
   static const FontWeight tajawalLight = FontWeight.w300;
-  static const FontWeight tajawalRegular= FontWeight.w500;
-  static const FontWeight tajawalMedium= FontWeight.w600;
-
+  static const FontWeight tajawalRegular = FontWeight.w500;
+  static const FontWeight tajawalMedium = FontWeight.w600;
 }
 
 class MyFontStyles {
@@ -24,18 +22,17 @@ class MyFontStyles {
   static TextStyle primaryBold24 = TextStyle(
     fontFamily: primaryFontFamily,
     color: AppColor.primary,
-
-    fontWeight: CustomFontWeight.tajawalBold,
-    fontSize: 24.w,
-  );  static TextStyle greyBold24 = TextStyle(
-    fontFamily: primaryFontFamily,
-    color: WhiteColors.textDarkGrey,
-
     fontWeight: CustomFontWeight.tajawalBold,
     fontSize: 24.w,
   );
-  static TextStyle? blackBold24 =  AppTextTheme.headlineSmall?.
-  copyWith(fontWeight: FontWeight.w700);
+  static TextStyle greyBold24 = TextStyle(
+    fontFamily: primaryFontFamily,
+    color: WhiteColors.textDarkGrey,
+    fontWeight: CustomFontWeight.tajawalBold,
+    fontSize: 24.w,
+  );
+  static TextStyle? blackBold24 = Theme.of(Get.context).textTheme.headlineSmall;
+  static TextStyle? blackBold20 = Theme.of(Get.context).textTheme.headlineSmall?.copyWith(fontSize: 20.sp);
 
   // TextStyle(
   //   fontFamily: primaryFontFamily,
@@ -64,36 +61,42 @@ class MyFontStyles {
     color: WhiteColors.textDarkGrey,
     fontWeight: CustomFontWeight.tajawalMedium,
     fontSize: 16.w,
-
-  ); static TextStyle whiteSemiBold16 = TextStyle(
+  );
+  static TextStyle whiteSemiBold16 = TextStyle(
     fontFamily: primaryFontFamily,
     color: WhiteColors.white,
     fontWeight: CustomFontWeight.tajawalMedium,
     fontSize: 16.w,
-
-  );static TextStyle primarySemiBold16 = TextStyle(
+  );
+  static TextStyle primarySemiBold16 = TextStyle(
     fontFamily: primaryFontFamily,
     color: AppColor.primary,
     fontWeight: CustomFontWeight.tajawalMedium,
     fontSize: 16.w,
   );
 
-  static TextStyle greyMedium18 = TextStyle(
-    fontFamily: primaryFontFamily,
-    fontWeight: CustomFontWeight.tajawalRegular,
-    color: WhiteColors.textDarkGrey,
-    fontSize: 18.w,
-  );
+  static TextStyle? greyMedium18 = Theme.of(Get.context).textTheme.titleMedium;
 
+  // TextStyle(
+  //   fontFamily: primaryFontFamily,
+  //   fontWeight: CustomFontWeight.tajawalRegular,
+  //   color: WhiteColors.textDarkGrey,
+  //   fontSize: 18.w,
+  // );
 
   static TextStyle blackBold14 = TextStyle(
     fontFamily: primaryFontFamily,
     color: BlueColors.dark,
     fontWeight: CustomFontWeight.tajawalBold,
     fontSize: 14.w,
+  );  static TextStyle blackBold12 = TextStyle(
+    fontFamily: primaryFontFamily,
+    color: BlueColors.dark,
+    fontWeight: CustomFontWeight.tajawalBold,
+    fontSize: 14.w,
   );
 
-  static TextStyle  greyRegular18 = TextStyle(
+  static TextStyle greyRegular18 = TextStyle(
     fontFamily: primaryFontFamily,
     color: WhiteColors.textDarkGrey,
     fontWeight: CustomFontWeight.tajawalRegular,
@@ -105,37 +108,29 @@ class MyFontStyles {
     fontWeight: CustomFontWeight.tajawalRegular,
     color: WhiteColors.textDarkGrey,
     fontSize: 15.w,
-  );  
-  
- static TextStyle  greyRegular14 = TextStyle(
+  );
+
+  static TextStyle greyRegular14 = TextStyle(
     fontFamily: primaryFontFamily,
     fontWeight: CustomFontWeight.tajawalRegular,
     color: WhiteColors.textDarkGrey,
-
     fontSize: 14.w,
   );
- 
- 
-   static TextStyle    primaryBold14 = TextStyle(
+
+  static TextStyle primaryBold14 = TextStyle(
     fontFamily: primaryFontFamily,
     fontWeight: CustomFontWeight.tajawalBold,
     color: AppColor.primary,
-
     fontSize: 14.w,
   );
- 
-  static TextStyle    primaryRegular14 = TextStyle(
+
+  static TextStyle primaryRegular14 = TextStyle(
     fontFamily: primaryFontFamily,
     fontWeight: CustomFontWeight.tajawalRegular,
     color: AppColor.primary,
-
     fontSize: 14.w,
   );
 }
- 
-
-
-
 
 class InputStyles {
   static const String primaryFontFamily = 'Tajawal';
@@ -144,20 +139,18 @@ class InputStyles {
   static TextStyle primaryBold24 = TextStyle(
     fontFamily: primaryFontFamily,
     color: AppColor.primary,
-
     fontWeight: CustomFontWeight.tajawalBold,
     fontSize: 24.w,
-  );  static TextStyle greyBold24 = TextStyle(
+  );
+  static TextStyle greyBold24 = TextStyle(
     fontFamily: primaryFontFamily,
     color: WhiteColors.textDarkGrey,
-
     fontWeight: CustomFontWeight.tajawalBold,
     fontSize: 24.w,
   );
   static TextStyle blackBold24 = TextStyle(
     fontFamily: primaryFontFamily,
     color: BlueColors.darkActive,
-
     fontWeight: CustomFontWeight.tajawalBold,
     fontSize: 24.w,
   );
@@ -181,14 +174,14 @@ class InputStyles {
     color: WhiteColors.textDarkGrey,
     fontWeight: CustomFontWeight.tajawalMedium,
     fontSize: 16.w,
-
-  ); static TextStyle whiteSemiBold16 = TextStyle(
+  );
+  static TextStyle whiteSemiBold16 = TextStyle(
     fontFamily: primaryFontFamily,
     color: WhiteColors.white,
     fontWeight: CustomFontWeight.tajawalMedium,
     fontSize: 16.w,
-
-  );static TextStyle primarySemiBold16 = TextStyle(
+  );
+  static TextStyle primarySemiBold16 = TextStyle(
     fontFamily: primaryFontFamily,
     color: AppColor.primary,
     fontWeight: CustomFontWeight.tajawalMedium,
@@ -202,7 +195,6 @@ class InputStyles {
     fontSize: 18.w,
   );
 
-
   static TextStyle blackBold14 = TextStyle(
     fontFamily: primaryFontFamily,
     color: BlueColors.dark,
@@ -210,7 +202,7 @@ class InputStyles {
     fontSize: 14.w,
   );
 
-  static TextStyle  greyRegular18 = TextStyle(
+  static TextStyle greyRegular18 = TextStyle(
     fontFamily: primaryFontFamily,
     color: WhiteColors.textDarkGrey,
     fontWeight: CustomFontWeight.tajawalRegular,
@@ -222,11 +214,11 @@ class InputStyles {
     fontWeight: CustomFontWeight.tajawalRegular,
     color: WhiteColors.textDarkGrey,
     fontSize: 15.w,
-  );  static TextStyle greyRegular14 = TextStyle(
+  );
+  static TextStyle greyRegular14 = TextStyle(
     fontFamily: primaryFontFamily,
     fontWeight: CustomFontWeight.tajawalRegular,
     color: WhiteColors.textDarkGrey,
-
     fontSize: 14.w,
   );
 }

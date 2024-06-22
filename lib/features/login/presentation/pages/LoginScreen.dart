@@ -5,6 +5,7 @@ import 'package:medical_care_app/core/constants/colors.dart';
 import '../../../../core/constants/image_strings.dart';
 import '../../../../core/helpers/helper_functions.dart';
 import '../../../../core/theme/style.dart';
+import '../../../../core/theme/widget_themes/switch_theme.dart';
 import '../../../../core/widget/MainButton.dart';
 import 'OTPScreen.dart';
 
@@ -34,10 +35,11 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 38.h,
             ),
+
             Center(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
-                child: Text('تسجيل الدخول', style: MyFontStyles.blackBold24),
+                child: Text('تسجيل الدخول', style:Theme.of(context).textTheme.headlineSmall),
               ),
             ),
             SizedBox(height: 16.h),
@@ -51,52 +53,51 @@ class _LoginScreenState extends State<LoginScreen> {
             Align(
                 alignment: Alignment.centerRight,
                 child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 6.h),
-                  child: Text("رقم الهاتف", style: MyFontStyles.blackBold14),
+                  padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 6.h),
+                  child: Text("رقم الهاتف", style:Theme.of(context).textTheme.headlineSmall?.copyWith(fontSize: 14.sp)),
                 )),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 12.h),
-              child: Directionality(
-                textDirection: TextDirection.rtl,
-                child: TextFormField(
-                  keyboardType: TextInputType.phone,
-                  decoration: InputDecoration(
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+              padding: EdgeInsets.symmetric(horizontal: 16.0.w, vertical: 16.h),
+              child: TextFormField(
+                keyboardType: TextInputType.phone,style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w700,color: Color(0xffB4B4B4)),
+                decoration: InputDecoration(
+                  contentPadding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
 
-                    hintText: "ادخل رقم الهاتف الخاص بك",
-                    suffixIcon: Container(
-                      width: 70.w,
-                      padding: const EdgeInsets.all(8.0),
-                      child: Row(
-                        children: [
-                          Text("+20",
-                              style: TextStyle(
-                                fontSize: 14.w,
-                              )),
-                          SizedBox(
-                            width: 8.w,
-                          ),
-                          Image.asset(
-                            ImageApp.egFlag,
-                            height: 24.w,
-                            width: 24.w,
-                          ),
-                        ],
-                      ),
-                    ),
 
-                    hintStyle: MyFontStyles.greyMedium18,
-                    enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: WhiteColors.grey),
-                      borderRadius: BorderRadius.circular(15),
+
+                  hintStyle: MyFontStyles.greyMedium18,
+                  hintText: "                         ادخل رقم الهاتف الخاص بك",
+                  prefixIcon: Container(
+                    width: 90.w,
+                    padding:EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+                    child: Row(
+                      children: [
+
+
+                        Image.asset(
+                          ImageApp.egFlag,
+                          height: 24.w,
+                          width: 24.w,
+                        ),     SizedBox(
+                          width: 8.w,
+                        ),  Text("+20",
+                            style: TextStyle(
+                              color: Color(0xff4E4E4E),
+                              fontSize: 14.w,
+                            )),
+                      ],
                     ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    // Add more decoration..
                   ),
+
+
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: WhiteColors.grey),
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  // Add more decoration..
                 ),
               ),
             ),
@@ -104,7 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
             MainButton(
               title: "تسجيل الدخول",
               onPressed: () {
-                THelperFunctions.navigateToScreen(OTPScreen());
+                THelperFunctions.navigateToScreen(const OTPScreen());
               },
             ),
             SizedBox(height: 240.h),

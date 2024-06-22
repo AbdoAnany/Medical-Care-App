@@ -15,15 +15,15 @@ import '../../core/theme/widget_themes/text_theme.dart';
 import '../../di.dart';
 import '../constants/colors.dart';
 
-class TAppTheme {
-  TAppTheme._();
+class AppTheme {
+  AppTheme._();
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     
     fontFamily: MyFontStyles.primaryFontFamily,
     disabledColor: AppColor.grey,
-    brightness: Brightness.light,
+  //  brightness: Brightness.light,
     primaryColor: AppColor.primary,
     textTheme: AppTextTheme.lightTextTheme,
     chipTheme: TChipTheme.lightChipTheme,
@@ -42,7 +42,7 @@ class TAppTheme {
     useMaterial3: true,
     fontFamily: MyFontStyles.primaryFontFamily,
     disabledColor: AppColor.grey,
-    brightness: Brightness.dark,
+ //   brightness: Brightness.dark,
     primaryColor: AppColor.primary,
     textTheme: AppTextTheme.darkTextTheme,
     chipTheme: TChipTheme.darkChipTheme,
@@ -71,10 +71,15 @@ class ThemeProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  getThemeMode() {
+  ThemeMode getThemeMode() {
     bool isDark = sl<SharedPreferences>().getBool('isDark') ?? false;
     isDarkModeEnabled = isDark;
-    _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
+ return   _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
+
+  }  bool getThemeModeIsDark() {
+    bool isDark = sl<SharedPreferences>().getBool('isDark') ?? false;
+    isDarkModeEnabled = isDark;
+ return   isDark;
 
   }
 }

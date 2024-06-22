@@ -5,10 +5,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:medical_care_app/features/home/presentation/widgets/home_search_bar.dart';
 
+import '../../../../app.dart';
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/image_strings.dart';
 import '../../../../core/helpers/helper_functions.dart';
 import '../../../../core/theme/style.dart';
+import '../../../../core/theme/widget_themes/switch_theme.dart';
 import '../../../order/order_screen.dart';
 import '../../../profile/profile.dart';
 import 'lab_details.dart';
@@ -42,6 +44,7 @@ class _HomeScreenState extends State<HomeScreen> {
           : TextDirection.ltr,
       child: SafeArea(
         child: Scaffold(
+floatingActionButton:  MySwitchTheme(),
           body: _screens[_currentIndex],
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
@@ -50,8 +53,8 @@ class _HomeScreenState extends State<HomeScreen> {
             unselectedItemColor: AppColor.darkGrey,
 
             onTap: _onItemTapped,
-            items: [
-              BottomNavigationBarItem(
+            items: const [
+               BottomNavigationBarItem(
                 icon: Icon(Iconsax.home),
                 label: 'الرئيسية',
               ),
@@ -180,9 +183,9 @@ class MainScreen extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Text('الخدمات',
-                    style: TextStyle(
-                        fontSize: 18.w, fontWeight: FontWeight.bold)),
+                Text('الخدمات', style:
+                Theme.of(Get.context).textTheme.headlineSmall?.copyWith(
+                    fontWeight: FontWeight.bold,fontSize: 18.sp)),
 
               ],
             ),
@@ -192,7 +195,7 @@ class MainScreen extends StatelessWidget {
 
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
-                border: Border.all(color: Color(0xffD8E8E8))
+                border: Border.all(color: Color(0xffD8E8E8),width: .5)
             ),
             padding:  EdgeInsets.symmetric(horizontal: 16.0.w,vertical:  12.h),
             margin:  EdgeInsets.symmetric(horizontal: 16.0.w),
@@ -300,8 +303,8 @@ class ServiceIcon extends StatelessWidget {
     return Column(
       children: [
         CircleAvatar(
-          backgroundColor: Colors.grey[200],
-          child: SvgPicture.asset(icon.toString()),
+          backgroundColor: Colors.transparent,
+          child: SvgPicture.asset(icon.toString(),color: AppColor.primary,),
           radius: 20,
         ),
         SizedBox(height: 4.h),
