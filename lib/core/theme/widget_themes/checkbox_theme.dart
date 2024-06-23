@@ -12,14 +12,14 @@ class TCheckboxTheme {
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.xs4)),
     checkColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return AppColor.white;
+        return AppColors.white;
       } else {
-        return AppColor.black;
+        return AppColors.black;
       }
     }),
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return AppColor.primary;
+        return AppColors.primary;
       } else {
         return Colors.transparent;
       }
@@ -31,14 +31,14 @@ class TCheckboxTheme {
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.xs4)),
     checkColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return AppColor.white;
+        return AppColors.white;
       } else {
-        return AppColor.black;
+        return AppColors.black;
       }
     }),
     fillColor: MaterialStateProperty.resolveWith((states) {
       if (states.contains(MaterialState.selected)) {
-        return AppColor.primary;
+        return AppColors.primary;
       } else {
         return Colors.transparent;
       }

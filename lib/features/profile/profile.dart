@@ -30,7 +30,7 @@ class ProfileScreen extends StatelessWidget {
             body: Column(
               children: [
                 Container(
-          color: AppColor.primaryPO.shade100
+          color: AppColors.primaryPO.shade100
                   ,
                   padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 20.w),
                   width: double.infinity,
@@ -201,7 +201,7 @@ class _LanguageToggleState extends State<LanguageToggle> {
           ),
         ),
         Switch(
-          activeColor: AppColor.primary,
+          activeColor: AppColors.primary,
           value: isArabic,
 
           onChanged: (value) {

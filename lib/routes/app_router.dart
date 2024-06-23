@@ -75,7 +75,7 @@ class _PageNotFoundState extends State<PageNotFound> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor:  AppColor.white,
+        backgroundColor:  AppColors.white,
         body: Center(child:Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,

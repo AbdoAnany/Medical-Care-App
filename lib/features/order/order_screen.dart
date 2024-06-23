@@ -53,7 +53,7 @@ class UserProfileSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric( vertical: 20.0.h, horizontal: 16.0.w),
-      color: AppColor.primaryPO.shade100,
+      color: AppColors.primaryPO.shade100,
       child: Row(
         children: [
           CircleAvatar(
@@ -280,7 +280,7 @@ class OrderCard extends StatelessWidget {
 
                           Text(
                             '$totalAmount',
-                            style: TextStyle(fontSize: 18.w,color: AppColor.primary, fontWeight: FontWeight.normal),
+                            style: TextStyle(fontSize: 18.w,color: AppColors.primary, fontWeight: FontWeight.normal),
                           ),
                         ],
                       ),

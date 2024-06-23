@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:medical_care_app/core/constants/image_strings.dart';
+import 'package:medical_care_app/core/helpers/re_factor.dart';
+import 'package:medical_care_app/core/theme/widget_themes/text_theme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../../di.dart';
@@ -81,8 +83,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-
-                SizedBox(height: 80.h),
+                MySwitchTheme(),
+              //  SizedBox(height: 80.h),
                 Center(
                   child: SizedBox(
                       height: 194.58.h,
@@ -117,7 +119,8 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 16.w),
                   child: Text(controller.items[index].title,
-                      style:Theme.of(context).textTheme.headlineSmall
+                   //   style:AppTextTheme.textBold24,
+                     style:Theme.of(context).textTheme.titleLarge
                    //   MyFontStyles.blackBold24
                   ),
                 ),
@@ -125,7 +128,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
                 Padding(
                   padding: EdgeInsets.only(right: 16.w, left: 54.w),
                   child: Text(controller.items[index].descriptions,
-                      style: MyFontStyles.greyMedium18,
+                      style:AppTextTheme.textNormal18,
                       textAlign: TextAlign.end),
                 ),
                 SizedBox(height: 64.h),
@@ -141,7 +144,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
 
                     if (!isLastPage) return;
                     THelperFunctions.navigateAndReplaceScreen(
-                        IntroductoryScreen());
+                        const IntroductoryScreen());
                   },
                 ))
               ],

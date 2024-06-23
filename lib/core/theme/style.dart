@@ -21,7 +21,7 @@ class MyFontStyles {
 
   static TextStyle primaryBold24 = TextStyle(
     fontFamily: primaryFontFamily,
-    color: AppColor.primary,
+    color: AppColors.primary,
     fontWeight: CustomFontWeight.tajawalBold,
     fontSize: 24.w,
   );
@@ -31,8 +31,8 @@ class MyFontStyles {
     fontWeight: CustomFontWeight.tajawalBold,
     fontSize: 24.w,
   );
-  static TextStyle? blackBold24 = Theme.of(Get.context).textTheme.headlineSmall;
-  static TextStyle? blackBold20 = Theme.of(Get.context).textTheme.headlineSmall?.copyWith(fontSize: 20.sp);
+  static TextStyle? blackBold24 = appTextTheme.headlineSmall;
+  static TextStyle? blackBold20 = appTextTheme.headlineSmall?.copyWith(fontSize: 20.sp);
 
   // TextStyle(
   //   fontFamily: primaryFontFamily,
@@ -70,12 +70,12 @@ class MyFontStyles {
   );
   static TextStyle primarySemiBold16 = TextStyle(
     fontFamily: primaryFontFamily,
-    color: AppColor.primary,
+    color: AppColors.primary,
     fontWeight: CustomFontWeight.tajawalMedium,
     fontSize: 16.w,
   );
 
-  static TextStyle? greyMedium18 = Theme.of(Get.context).textTheme.titleMedium;
+  static TextStyle? greyMedium18 = appTextTheme.titleMedium;
 
   // TextStyle(
   //   fontFamily: primaryFontFamily,
@@ -120,14 +120,14 @@ class MyFontStyles {
   static TextStyle primaryBold14 = TextStyle(
     fontFamily: primaryFontFamily,
     fontWeight: CustomFontWeight.tajawalBold,
-    color: AppColor.primary,
+    color: AppColors.primary,
     fontSize: 14.w,
   );
 
   static TextStyle primaryRegular14 = TextStyle(
     fontFamily: primaryFontFamily,
     fontWeight: CustomFontWeight.tajawalRegular,
-    color: AppColor.primary,
+    color: AppColors.primary,
     fontSize: 14.w,
   );
 }
@@ -138,7 +138,7 @@ class InputStyles {
 
   static TextStyle primaryBold24 = TextStyle(
     fontFamily: primaryFontFamily,
-    color: AppColor.primary,
+    color: AppColors.primary,
     fontWeight: CustomFontWeight.tajawalBold,
     fontSize: 24.w,
   );
@@ -183,7 +183,7 @@ class InputStyles {
   );
   static TextStyle primarySemiBold16 = TextStyle(
     fontFamily: primaryFontFamily,
-    color: AppColor.primary,
+    color: AppColors.primary,
     fontWeight: CustomFontWeight.tajawalMedium,
     fontSize: 16.w,
   );

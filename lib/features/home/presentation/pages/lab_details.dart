@@ -20,7 +20,7 @@ class LabDetails extends StatelessWidget {
       //     ),
       //   ],
       // ),
-      backgroundColor: AppColor.white,
+      backgroundColor: AppColors.white,
       body: Directionality(textDirection: TextDirection.rtl,
         child: SafeArea(
           child: SingleChildScrollView(

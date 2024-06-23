@@ -16,7 +16,7 @@ class Get {
   static BuildContext get context => navigatorKey.currentContext!;
   static NavigatorState get navigator => navigatorKey.currentState!;
 }
-
+late final TextTheme appTextTheme;
 class App extends StatelessWidget {
   const App({super.key});
   @override
@@ -29,11 +29,11 @@ class App extends StatelessWidget {
         ],
         child: Consumer<ThemeProvider>(builder: (context, them, c) {
 
-        final themeMode =  them.getThemeMode();
         final isDark =  them.getThemeModeIsDark();
-       //   AppTextTheme.init(context, them);
-          TSizes.init(context: context);
-          ScreenUtil.init(context);
+        TSizes.init(context: context);
+        ScreenUtil.init(context);
+        AppTextTheme.init(context,isDark);
+
 
           print(them.themeMode.name);
           return ScreenUtilInit(
@@ -46,7 +46,10 @@ class App extends StatelessWidget {
               useInheritedMediaQuery: true,
               ensureScreenSize: true,
               child: MaterialApp(
-                  builder: (context, w) => w!,
+                  builder: (context, w) {
+
+                    return w!;
+                  },
                   debugShowCheckedModeBanner: false,
                   supportedLocales: context.supportedLocales,
                   localizationsDelegates: context.localizationDelegates,

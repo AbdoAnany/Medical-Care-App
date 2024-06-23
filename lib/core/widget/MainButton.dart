@@ -19,7 +19,7 @@ class MainButton extends StatelessWidget {
       padding:EdgeInsets.symmetric(horizontal: 24.w,vertical: 10.h),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: AppColor.primary
+          color: AppColors.primary
       ),
       //  width: MediaQuery.of(context).size.width * .9,
       //   height: TSizes.buttonHeight,
@@ -48,8 +48,8 @@ class MainButtonOutLine extends StatelessWidget {
       padding:EdgeInsets.symmetric(horizontal: 24.w,vertical: 10.h),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          border: Border.all(color: AppColor.primary.withOpacity(.3)),
-          color: AppColor.primary.withOpacity(.07)
+          border: Border.all(color: AppColors.primary.withOpacity(.3)),
+          color: AppColors.primary.withOpacity(.07)
       ),
       //  width: MediaQuery.of(context).size.width * .9,
       //   height: TSizes.buttonHeight,

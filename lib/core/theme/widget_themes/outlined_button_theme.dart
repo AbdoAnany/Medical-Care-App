@@ -12,9 +12,9 @@ class TOutlinedButtonTheme {
   static final lightOutlinedButtonTheme  = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
       elevation: 0,
-      foregroundColor: AppColor.backgroundLight,
+      foregroundColor: AppColors.backgroundLight,
       side: const BorderSide(color:  WhiteColors.grey),
-      textStyle:  TextStyle(fontSize:  TSizes.fontSizeMd, color: AppColor.black, fontWeight: FontWeight.w600),
+      textStyle:  TextStyle(fontSize:  TSizes.fontSizeMd, color: AppColors.black, fontWeight: FontWeight.w600),
       padding:  EdgeInsets.symmetric(vertical: TSizes.buttonHeight, horizontal: TSizes.lg24),
       shape: RoundedRectangleBorder(side: BorderSide(color: WhiteColors.grey),
           borderRadius: BorderRadius.circular(TSizes.buttonRadius)),
@@ -25,9 +25,9 @@ class TOutlinedButtonTheme {
   /* -- Dark Theme -- */
   static final darkOutlinedButtonTheme = OutlinedButtonThemeData(
     style: OutlinedButton.styleFrom(
-      foregroundColor: AppColor.backgroundDark,
-      side: const BorderSide(color: AppColor.borderPrimary),
-      textStyle:  TextStyle(fontSize:  TSizes.fontSizeMd, color: AppColor.textWhite, fontWeight: FontWeight.w600),
+      foregroundColor: AppColors.backgroundDark,
+      side: const BorderSide(color: AppColors.borderPrimary),
+      textStyle:  TextStyle(fontSize:  TSizes.fontSizeMd, color: AppColors.textWhite, fontWeight: FontWeight.w600),
       padding:  EdgeInsets.symmetric(vertical: TSizes.buttonHeight, horizontal: TSizes.lg24),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.buttonRadius)),
     ),

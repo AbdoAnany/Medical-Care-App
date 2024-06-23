@@ -43,7 +43,7 @@ class _OTPScreenState extends State<OTPScreen> {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: Text('أدخل رمز ال OTP',textDirection: TextDirection.rtl,
-                    style: Theme.of(Get.context).textTheme.headlineSmall),
+                    style: appTextTheme.headlineSmall),
               ),
             ),
             SizedBox(height: 16.h),
@@ -114,7 +114,7 @@ class _OTPScreenState extends State<OTPScreen> {
                       style: MyFontStyles.blackBold12
                           .copyWith(decoration: TextDecoration.underline,color: Color(0xff10807E))),
                   Text("لم أستلم رمز ؟  ",
-                      style: Theme.of(Get.context).textTheme.titleMedium?.copyWith(fontSize: 14.sp)),
+                      style: appTextTheme.titleMedium?.copyWith(fontSize: 14.sp)),
                 ],
               ),
             ),
@@ -140,7 +140,7 @@ class _OTPScreenState extends State<OTPScreen> {
                       child: Padding(
                         padding: EdgeInsets.symmetric(horizontal: 16.w),
                         child: Text("تم تأكيد حسابك بنجاح",
-                            style:Theme.of(Get.context).textTheme.headlineSmall),
+                            style:appTextTheme.headlineSmall),
                       ),
                     ),
                     SizedBox(height: 16.h),
