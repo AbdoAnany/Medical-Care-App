@@ -11,7 +11,7 @@ class TIconButtonTheme {
         borderRadius: BorderRadius.circular(15),
       ),
       elevation: 5,
-      backgroundColor: AppColor.white,
+      backgroundColor: AppColors.white,
       fixedSize: const Size(55, 55),
     ),
   );
@@ -20,7 +20,7 @@ class TIconButtonTheme {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
-      backgroundColor: AppColor.darkerGrey,
+      backgroundColor: AppColors.darkerGrey,
       elevation: 5,
       fixedSize: const Size(55, 55),
     ),

@@ -7,7 +7,7 @@ class TIconTheme {
   TIconTheme._();
 
   static IconThemeData lightIconTheme =
-      IconThemeData(color: AppColor.black, size: TSizes.iconMd);
+      IconThemeData(color: AppColors.black, size: TSizes.iconMd);
   static IconThemeData darkIconTheme =
-      IconThemeData(color: AppColor.white, size: TSizes.iconMd);
+      IconThemeData(color: AppColors.white, size: TSizes.iconMd);
 }

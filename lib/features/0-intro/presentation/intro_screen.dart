@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medical_care_app/features/0-intro/presentation/pages/SplashScreen.dart';
 
+import '../../../app.dart';
 import '../../../features/0-intro/presentation/pages/OnboardingView.dart';
 
 class IntroScreen extends StatefulWidget {
@@ -14,6 +15,8 @@ class _IntroScreenState extends State<IntroScreen> {
   bool onBoardingShow = true;
   @override
   void initState() {
+    appTextTheme=   Theme.of(Get.context).textTheme;
+
     //  onBoardingShow = sl<SharedPreferences>().getBool(IntroScreen.onBoarding) ?? true;
     super.initState();
   }

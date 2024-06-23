@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:medical_care_app/core/helpers/re_factor.dart';
 import 'package:medical_care_app/features/home/presentation/widgets/home_search_bar.dart';
 
 import '../../../../app.dart';
@@ -49,8 +50,8 @@ floatingActionButton:  MySwitchTheme(),
           bottomNavigationBar: BottomNavigationBar(
             type: BottomNavigationBarType.fixed,
             currentIndex: _currentIndex,
-            selectedItemColor: AppColor.primary,
-            unselectedItemColor: AppColor.darkGrey,
+            selectedItemColor: AppColors.primary,
+            unselectedItemColor: AppColors.darkGrey,
 
             onTap: _onItemTapped,
             items: const [
@@ -89,7 +90,7 @@ class MainScreen extends StatelessWidget {
             height: 200.h,
             padding: EdgeInsets.symmetric(horizontal: 16.w),
             decoration:
-            BoxDecoration(color: AppColor.primary.withOpacity(.1)),
+            BoxDecoration(color: AppColors.primary.withOpacity(.1)),
             child: Column(
               children: [
                 SizedBox(
@@ -137,12 +138,12 @@ class MainScreen extends StatelessWidget {
                     Spacer(),
                     Container(
                       decoration: BoxDecoration(
-                          color: AppColor.white, shape: BoxShape.circle),
+                          color: AppColors.white, shape: BoxShape.circle),
                       height: 46.w,
                       width: 46.w,
                       child: Icon(
                         Iconsax.notification,
-                        color: AppColor.darkGrey,
+                        color: AppColors.darkGrey,
                       ),
                     ),
                   ],
@@ -172,7 +173,7 @@ class MainScreen extends StatelessWidget {
                     image: DecorationImage(
                         image: AssetImage(ImageApp.banner1),
                         fit: BoxFit.cover),
-                    color: AppColor.lightContainer,
+                    color: AppColors.lightContainer,
                     borderRadius: BorderRadius.circular(12)),
               ),
             ),
@@ -184,8 +185,7 @@ class MainScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Text('الخدمات', style:
-                Theme.of(Get.context).textTheme.headlineSmall?.copyWith(
-                    fontWeight: FontWeight.bold,fontSize: 18.sp)),
+                appTextTheme.headlineSmall),
 
               ],
             ),
@@ -234,7 +234,7 @@ class MainScreen extends StatelessWidget {
                   onTap: () {},
                   child: Text('عرض الجميع',
                       style: TextStyle(
-                          color: AppColor.primary,
+                          color: AppColors.primary,
                           fontWeight: FontWeight.bold,
                           fontSize: 14.w)),
                 ),
@@ -304,11 +304,11 @@ class ServiceIcon extends StatelessWidget {
       children: [
         CircleAvatar(
           backgroundColor: Colors.transparent,
-          child: SvgPicture.asset(icon.toString(),color: AppColor.primary,),
+          child: SvgPicture.asset(icon.toString(),color: AppColors.primary,),
           radius: 20,
         ),
         SizedBox(height: 4.h),
-        Text(label,style: TextStyle(fontSize: 14.w,color: AppColor.primary,fontWeight: FontWeight.bold),),
+        Text(label,style: TextStyle(fontSize: 14.w,color: AppColors.primary,fontWeight: FontWeight.bold),),
       ],
     );
   }
