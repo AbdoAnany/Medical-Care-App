@@ -12,13 +12,13 @@ class TElevatedButtonTheme {
   static final lightElevatedButtonTheme  = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
-      foregroundColor: AppColor.backgroundLight,
-      backgroundColor: AppColor.primary,
-      disabledForegroundColor: AppColor.darkGrey,
-      disabledBackgroundColor: AppColor.buttonDisabled,
-      side: const BorderSide(color: AppColor.primary),
+      foregroundColor: AppColors.backgroundLight,
+      backgroundColor: AppColors.primary,
+      disabledForegroundColor: AppColors.darkGrey,
+      disabledBackgroundColor: AppColors.buttonDisabled,
+      side: const BorderSide(color: AppColors.primary),
       padding:  EdgeInsets.symmetric(vertical: TSizes.buttonHeight),
-      textStyle:  TextStyle(fontSize: TSizes.fontSizeMd, color: AppColor.textWhite, fontWeight: FontWeight.w600),
+      textStyle:  TextStyle(fontSize: TSizes.fontSizeMd, color: AppColors.textWhite, fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.buttonRadius)),
     ),
   );
@@ -27,13 +27,13 @@ class TElevatedButtonTheme {
   static final darkElevatedButtonTheme = ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
       elevation: 0,
-      foregroundColor: AppColor.backgroundDark,
-      backgroundColor: AppColor.primary,
-      disabledForegroundColor: AppColor.darkGrey,
-      disabledBackgroundColor: AppColor.darkerGrey,
-      side: const BorderSide(color: AppColor.primary),
+      foregroundColor: AppColors.backgroundDark,
+      backgroundColor: AppColors.primary,
+      disabledForegroundColor: AppColors.darkGrey,
+      disabledBackgroundColor: AppColors.darkerGrey,
+      side: const BorderSide(color: AppColors.primary),
       padding:  EdgeInsets.symmetric(vertical: TSizes.buttonHeight),
-      textStyle:  TextStyle(fontSize:  TSizes.fontSizeMd, color: AppColor.textWhite, fontWeight: FontWeight.w600),
+      textStyle:  TextStyle(fontSize:  TSizes.fontSizeMd, color: AppColors.textWhite, fontWeight: FontWeight.w600),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.buttonRadius)),
     ),
   );
